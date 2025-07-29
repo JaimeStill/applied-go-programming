@@ -31,20 +31,25 @@ Based on content analysis, automatically engage appropriate subagents:
 **For All Content:**
 - **Academic Editor**: Structure, clarity, consistency, professional presentation
 
-### Step 3: Comprehensive Review Process
+### Step 3: Action-Oriented Subagent Review Process
+
+**Critical**: Always request specific actions from subagents, not just analysis.
 
 **Single Document Review:**
-1. Engage appropriate subagents simultaneously for parallel review
-2. Collect feedback on technical accuracy, educational effectiveness, and presentation quality
-3. Identify specific issues with actionable improvement suggestions
-4. Validate that all AECS standards are met
+1. Engage appropriate subagents with action-oriented prompts:
+   - **Domain Expert**: "Fix technical issues and improve code quality by editing the files directly"
+   - **CS Professor**: "Restructure sections with poor learning progression by updating the content"
+   - **Academic Editor**: "Fix formatting and improve readability by editing the files"
+2. Request concrete deliverables: improved files, not just feedback reports
+3. Specify what each subagent should accomplish through direct file changes
+4. Define success criteria: "After your improvements, all code should compile and follow best practices"
 
 **Multi-Document Review:**
-1. Review individual documents as above
-2. Analyze flow and progression between documents
-3. Verify cross-references and connections are accurate
-4. Ensure consistent terminology and conventions across all materials
-5. Validate learning progression and prerequisite alignment
+1. Review individual documents with action-oriented subagent engagement
+2. Have academic-editor standardize formatting across all documents by editing them
+3. Have cs-professor restructure content flow between documents by updating the files
+4. Request domain expert to ensure consistent technical patterns by improving files
+5. Validate changes improve overall learning progression
 
 ### Step 4: Integration and Consistency Validation
 
@@ -143,12 +148,14 @@ The review process should:
 
 ## Example Usage
 
+**Action-Oriented Curriculum Review:**
 ```
-Execute review-content.md. CONTENT_TYPE is "complete curriculum". DOCUMENT_PATHS is "curriculum.md, chapters/00-foundations/go-foundations.md, chapters/01-concurrency/01-basic-goroutines.md". REVIEW_FOCUS is "comprehensive quality assurance before curriculum launch". CONTEXT is "Final validation of AECS-generated Go programming curriculum for experienced developers".
-```
-
-```
-Execute review-content.md. CONTENT_TYPE is "chapter with exercises". DOCUMENT_PATHS is "chapters/01-concurrency/roadmap.md, chapters/01-concurrency/01-basic-goroutines.md". REVIEW_FOCUS is "technical accuracy and learning progression". CONTEXT is "Concurrency chapter review focusing on Go best practices and pedagogical effectiveness".
+Execute review-content.md. CONTENT_TYPE is "complete curriculum". DOCUMENT_PATHS is "curriculum.md, chapters/00-foundations/go-foundations.md, chapters/01-concurrency/01-basic-goroutines.md". REVIEW_FOCUS is "technical fixes and learning progression improvements". CONTEXT is "Use subagents to make actual edits and improvements, not just provide analysis".
 ```
 
-This will engage appropriate subagents to conduct thorough review and provide actionable feedback for curriculum improvement.
+**Chapter Improvement with Specific Actions:**
+```
+Execute review-content.md. CONTENT_TYPE is "chapter with exercises". DOCUMENT_PATHS is "chapters/01-concurrency/roadmap.md, chapters/01-concurrency/01-basic-goroutines.md". REVIEW_FOCUS is "fix code issues and restructure poor learning flow". CONTEXT is "Each subagent should use editing tools to make concrete improvements to files".
+```
+
+**Important**: This prompt will engage subagents to make actual changes to files, not just provide assessment reports. Always specify what improvements each subagent should make to the content.

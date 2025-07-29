@@ -94,35 +94,63 @@ Each exercise must contain:
 
 ## Working with Sub Agents
 
-### Automatic Delegation
+### Critical: Effective Subagent Engagement
 
-Claude Code will automatically use sub agents when you:
+**Problem**: Subagents provide analysis but don't take action when asked to "review" or "validate".
+**Solution**: Always request specific actions that result in concrete improvements.
 
-- Generate new Go code or exercises
-- Request content review or improvements
-- Ask about pedagogical approaches
-- Need formatting or structure help
+### Action-Oriented Prompting (Required)
 
-### Explicit Invocation Examples
+❌ **Don't Ask For Analysis**:
+- "Review the code quality"
+- "Validate the learning progression"
+- "Check for consistency issues"
 
-```
-"Have go-engineer create a production-ready worker pool implementation"
+✅ **Request Specific Actions**:
+- "Fix code quality issues by editing the files directly"
+- "Improve learning progression by restructuring sections in the files"
+- "Fix consistency issues you find by updating the content"
 
-"Ask cs-professor if this explanation of channels is clear for beginners"  
+### Direct Action Requirements
 
-"Get academic-editor to ensure this chapter follows our standard format"
-
-"Use go-engineer to validate all code examples in the concurrency chapter"
-```
-
-### Chaining Sub Agents
-
-For complex tasks, chain multiple agents:
+Always specify what the subagent should accomplish:
 
 ```
-"First have cs-professor design the learning flow for the networking chapter, 
-then get go-engineer to implement the code examples, and finally have 
-academic-editor polish the entire chapter"
+"Fix any non-idiomatic Go patterns in chapter1.md by editing the file directly"
+
+"Standardize all heading formats across these files by updating them: [list]"
+
+"Create missing bridge content between concepts by adding new sections"
+```
+
+### Effective Subagent Invocation Examples
+
+**Code Review (go-engineer)**:
+```
+"Fix any compilation errors, security issues, or non-idiomatic patterns in /path/to/file.go by editing the file directly. After your changes, all code should compile with Go 1.24+ and follow production best practices."
+```
+
+**Educational Review (cs-professor)**:
+```
+"Restructure any sections with poor learning progression in /path/to/chapter.md and create bridge content for concept gaps you identify by editing and expanding the file."
+```
+
+**Content Polish (academic-editor)**:
+```
+"Fix formatting inconsistencies and improve readability in these files by editing them directly: [list]. Ensure consistent heading styles, proper spacing, and professional presentation."
+```
+
+### Automatic Delegation vs Explicit Control
+
+**Automatic**: Claude Code will automatically use subagents for domain-specific tasks
+**Explicit**: Use explicit invocation when you need specific changes made
+
+### Chaining Sub Agents with Actions
+
+For complex workflows, chain agents with specific deliverables:
+
+```
+"First, have cs-professor improve the learning flow in networking-chapter.md by restructuring the content. Then have go-engineer enhance the code examples by editing them directly. Finally, have academic-editor polish the formatting across all changed files."
 ```
 
 ## Project Guidelines

@@ -28,20 +28,20 @@ Create a compelling professional identity:
 - **Quality Philosophy**: What the agent believes makes excellent content
 - **Teaching Style**: How they approach educational content review
 
-### Step 3: Responsibility Framework
-Define clear areas of focus:
+### Step 3: Action-Oriented Responsibility Framework
+Define clear areas of focus with emphasis on concrete actions:
 
 **Primary Responsibilities:**
-- Core areas where the agent provides expert review
-- Specific quality criteria for each area
-- Red flags and common issues to identify
-- Positive patterns to promote
+- Core areas where the agent makes actual improvements (not just reviews)
+- Specific quality criteria and how to fix violations
+- Red flags to identify AND how to correct them
+- Positive patterns to promote through concrete changes
 
-**Review Process:**
-- Systematic approach to content evaluation
-- Specific feedback structure and format
-- Integration with other agents and workflow
-- Educational context considerations
+**Action-First Process:**
+- Make direct improvements to files rather than providing analysis
+- Provide specific content changes and enhancements
+- Focus on deliverable improvements to content quality
+- Always specify what concrete actions to take for each type of issue
 
 **Quality Standards:**
 - Technical accuracy benchmarks
@@ -57,11 +57,12 @@ Develop authentic communication:
 - Educational mindset that prioritizes learner success
 
 ### Step 5: Integration Specifications
-Define workflow integration:
+Define workflow integration with action-oriented focus:
 - When the agent should be automatically invoked
-- How they collaborate with other agents
-- What content types they review
-- How their feedback should be incorporated
+- How they collaborate with other agents (through file changes, not reports)
+- What content types they improve (not just review)
+- How their concrete changes integrate with other agents' work
+- Default actions and approaches for different types of content issues
 
 ## Output Requirements
 

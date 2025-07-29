@@ -242,10 +242,50 @@ AECS exercises follow a comprehensive structure:
 
 ### Subagent Collaboration
 
+#### **Critical Best Practices for Effective Subagent Engagement**
+
+**Problem**: Subagents often provide analysis without taking action when asked to "review" or "validate" content.
+
+**Solution**: Use action-oriented prompting that explicitly requests concrete changes.
+
+#### **Effective Subagent Prompting Patterns**
+
+❌ **Ineffective**: "Please review the code for best practices"
+✅ **Effective**: "Fix any non-idiomatic code patterns you find by editing the files directly"
+
+❌ **Ineffective**: "Validate the learning progression"
+✅ **Effective**: "Restructure sections that have poor learning progression and create any missing bridging content"
+
+❌ **Ineffective**: "Check for consistency"
+✅ **Effective**: "Standardize all heading formats and fix any formatting inconsistencies in the files"
+
+#### **Action-Oriented Subagent Engagement Framework**
+
+**1. Specify Concrete Actions**
+- Use action verbs: "Fix", "Change", "Edit", "Create", "Update"
+- Avoid analysis verbs: "Review", "Validate", "Analyze", "Check"
+
+**2. Request Direct Action**
+- Focus on outcomes: "Fix the issues", "Improve the content", "Restructure the sections"
+- Define what "done" looks like in terms of improved files
+
+**3. Define Deliverables**
+- Request specific outputs: "After editing, the file should have..."
+- Set measurable success criteria: "Fix all instances of...", "Create sections for..."
+
+**4. Provide Complete Context**
+- Give subagents all necessary information in a single prompt
+- Include file paths, specific requirements, and success criteria
+- Remember subagents have their own context windows
+
+#### **Subagent Workflow Integration**
+
 - **Invoke subagents early and often** in the generation process
 - **Be specific about review criteria** when requesting subagent feedback
-- **Iterate based on subagent suggestions** to improve quality
-- **Document subagent insights** for future reference
+- **Always specify concrete actions** to prevent analysis-only responses
+- **Request concrete deliverables** rather than assessment reports
+- **Iterate based on subagent changes** to improve quality
+- **Document successful prompting patterns** for future reference
 
 ### Prompt Engineering
 
