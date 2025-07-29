@@ -1,147 +1,63 @@
 # Applied Go Programming
 
-An Exercise-driven Go programming learning Path for experienced developers using the Agentic Exercise Curriculum System (AECS).
+A comprehensive Go programming Path built with the Agentic Exercise Curriculum System (AECS) that transforms experienced developers into Go masters through intensive, hands-on Exercises rather than passive learning.
 
-## Overview
+## What You'll Build
 
-This repository contains a comprehensive Go programming Path structured as hands-on Exercises. The Path takes developers from Go fundamentals to production mastery through practical implementation rather than theoretical instruction, where every learning interaction centers on building working code.
+Through this Exercise-driven Path, you'll develop expertise by building real applications that demonstrate Go's unique approach to concurrent programming, systems development, and production-ready software. Every concept is mastered through practical implementation that produces working, testable code.
 
-## Learning Approach
+**Learning Through Building**: 11 progressive Stages containing atomic Exercises that take you from Go fundamentals to production systems, each requiring immediate hands-on implementation rather than theoretical study.
 
-**Exercise-Driven Mastery**: Every concept is learned through immediate hands-on building of working Go programs. No passive consumption - all learning occurs through practical implementation that produces tangible, testable results.
+**Production Portfolio**: Complete the Path with working applications including concurrent web services, data processing pipelines, microservices architectures, cloud-native deployments, and comprehensive monitoring systems.
 
-**Single-Concept Atomicity**: Each Exercise addresses exactly one Go concept in its simplest useful form, ensuring focused learning outcomes and clear progression markers.
+## Stage Progression
 
-**Progressive Complexity**: Concepts build incrementally across Stages, with each new Exercise depending only on previously mastered Go features through hands-on practice.
+This Path progresses through 11 Stages, each building practical mastery through atomic Exercises:
 
-## Repository Structure
+**Foundation Stages**:
+- **Stage 1: Fundamentals** - Core Go constructs through working programs
+- **Stage 2: Concurrency** - Goroutines and channels through concurrent applications
+- **Stage 3: Data Structures** - Efficient algorithms with benchmark validation
 
-```
-applied-go-programming/
-├── README.md                    # This documentation
-├── PATH.md                      # Complete Go learning path roadmap
-├── CLAUDE.md                    # Project implementation guide
-├── _framework/                  # AECS methodology (reusable framework)
-│   ├── README.md               # Complete AECS methodology
-│   ├── CLAUDE.md               # AECS-specific implementation directives
-│   ├── _templates/             # AECS-compliant content templates
-│   └── _prompts/               # Exercise-first generation prompts
-├── .claude/agents/             # AECS-constrained content experts
-└── stages/                     # Exercise-driven learning content
-    ├── 01-fundamentals/        # Go basics through atomic Exercises
-    ├── 02-concurrency/         # Goroutines and concurrent patterns
-    ├── 03-data-structures/     # Advanced data handling
-    ├── 04-web-programming/     # HTTP servers and web applications
-    ├── 05-database-integration/ # Data persistence
-    ├── 06-testing-quality/     # Testing and code quality
-    ├── 07-performance/         # Optimization and profiling
-    ├── 08-deployment/          # Containerization and deployment
-    ├── 09-monitoring/          # Observability and debugging
-    ├── 10-advanced-patterns/   # Complex architectural patterns
-    ├── 11-production-operations/ # Production-ready systems
-    └── appendices/             # Go reference materials
-```
+**Application Stages**:
+- **Stage 4: Advanced Features** - Sophisticated language constructs through real implementations
+- **Stage 5: Architecture** - Maintainable applications using proven patterns
+- **Stage 6: Testing** - Comprehensive test suites with coverage analysis
+- **Stage 7: Network Programming** - Distributed systems from protocols to services
+
+**Production Stages**:
+- **Stage 8: Database Integration** - Robust data persistence with performance optimization
+- **Stage 9: Cloud-Native** - Container orchestration and Kubernetes deployment
+- **Stage 10: Performance** - Profiling and optimization for production workloads
+- **Stage 11: Operations** - Complete observability and production readiness
+
+Each Stage contains focused Exercises that build working applications demonstrating specific Go concepts in practical contexts.
+
+## Prerequisites
+
+**Programming Experience**: Proficiency in at least one language (Java, Python, C#, JavaScript, etc.) with understanding of fundamental concepts through hands-on implementation.
+
+**Technical Setup**: Go 1.24+, code editor with Go support, Docker for deployment exercises, and basic command-line familiarity.
+
+**Learning Commitment**: 12-16 weeks self-paced with focus on building working applications rather than consuming theoretical content.
 
 ## Getting Started
 
-### Prerequisites
+1. **Review the Complete Path**: Examine `PATH.md` for the full 11-Stage progression and expected outcomes
+2. **Start Building Immediately**: Begin with `stages/01-fundamentals/stage.md` and complete each Exercise by building working Go code
+3. **Progress Through Dependencies**: Each Stage builds on previously mastered concepts - complete Stages sequentially
+4. **Validate Through Implementation**: Every Exercise must produce working code that compiles, runs, and demonstrates the target concept
 
-- Experience with at least one programming language
-- Go 1.24+ installed and configured
-- Basic command-line familiarity
-- Text editor or IDE with Go support
-
-### Learning Path
-
-1. **Review the Path**: Start with `PATH.md` for complete learning journey overview
-2. **Begin with Fundamentals**: Start with `stages/01-fundamentals/` for Go basics
-3. **Progress Sequentially**: Complete Stages in numbered order
-4. **Build Every Exercise**: Each Stage contains hands-on Exercises requiring working Go code
-5. **Verify Implementation**: All code must compile, run, and produce observable results
-
-### Stage Organization
-
-Each Stage follows this structure:
-- `stage.md`: Stage overview and Exercise sequence
-- `01-concept.md`, `02-concept.md`, etc.: Individual atomic Exercises
-
-Each Exercise requires:
-- Building working Go code that compiles and runs
-- Producing tangible, observable results
-- Using only previously mastered Go concepts
-- Demonstrating exactly one Go concept practically
-
-## Exercise-Driven Learning
-
-### What Makes This Different
-
-**Traditional Approach**: Read about Go concepts → Study examples → Maybe try coding
-**AECS Approach**: Immediately build working Go programs demonstrating each concept
-
-### Learning Outcomes
-
-By completing this Path through hands-on building, you will have implemented:
-
-- **Working Go Applications**: Demonstrating core language features through practical code
-- **Concurrent Programs**: Using goroutines, channels, and concurrent patterns
-- **Web Services**: HTTP servers and web application backends
-- **Database Integration**: Data persistence and management systems
-- **Production Systems**: Tested, optimized, deployable Go applications
-- **Monitoring Solutions**: Observability and debugging implementations
-
-### Exercise Requirements
-
-Every Exercise in this Path:
-- Addresses exactly one Go concept through practical building
-- Produces working code that compiles and runs successfully
-- Generates observable, testable results
-- Uses only Go features mastered in previous Exercises
-- Follows Go best practices and idioms
+**Exercise Structure**: Each Exercise follows AECS methodology with single-concept focus, immediate hands-on building requirements, and tangible implementation outcomes.
 
 ## AECS Framework
 
-This Path uses the **Agentic Exercise Curriculum System** (AECS), a methodology for creating Exercise-driven technical learning experiences.
+This Path implements the **Agentic Exercise Curriculum System** (AECS), a methodology for mastering technical subjects through Exercise-driven learning rather than passive consumption.
 
-**Core Principles**:
-- **Exercise Primacy**: All learning through hands-on building, never passive consumption
-- **Concept Atomicity**: Each Exercise demonstrates exactly one concept
-- **Applied Understanding**: Learning occurs through building working examples
-- **Progressive Complexity**: Concepts build incrementally through mastered dependencies
+**Core AECS Principles**:
+- **Exercise Primacy**: Every learning interaction centers on building working code, never passive reading
+- **Concept Atomicity**: Each Exercise demonstrates exactly one Go concept in its simplest useful form
+- **Applied Understanding**: Learning occurs through practical implementation producing tangible results
+- **Progressive Complexity**: Each concept builds incrementally on previously mastered dependencies
 
-**Framework Details**: See `_framework/README.md` for complete AECS methodology.
-
-## Content Development
-
-This Path uses AECS-constrained AI agents to ensure quality and consistency:
-
-- **go-engineer**: Verifies Go code quality and best practices
-- **cs-professor**: Validates Exercise-driven learning progression  
-- **academic-editor**: Maintains AECS structure and consistency
-
-**Content Generation**: Uses `_framework/_prompts/` for creating new AECS-compliant content.
-
-## Quality Standards
-
-All content meets these standards:
-
-- **AECS Compliance**: Enforces Exercise Primacy through hands-on building
-- **Go Compatibility**: All code compiles with Go 1.24+
-- **Production Quality**: Follows Go best practices and conventions
-- **Practical Focus**: Every Exercise produces working, testable results
-- **Progressive Building**: Clear dependency chains between concepts
-
-## Getting Help
-
-- **Exercise Issues**: Each Exercise includes troubleshooting guidance
-- **Go Questions**: Reference materials in `stages/appendices/`
-- **AECS Methodology**: Complete documentation in `_framework/README.md`
-
-## Status
-
-This Path is actively developed using AECS methodology. Stages are continuously refined based on Exercise-driven learning effectiveness and hands-on implementation success.
-
-**Current Status**: Foundation Stages implemented with atomic Exercise sequences ready for hands-on Go programming mastery.
-
----
-
-**Start Building**: Begin your Go mastery journey with `stages/01-fundamentals/` - where every concept is learned through immediate hands-on implementation of working Go programs.
+**Framework Structure**: The complete AECS methodology and reusable templates are contained in `_framework/` for creating similar Exercise-driven learning experiences in other technical domains.
