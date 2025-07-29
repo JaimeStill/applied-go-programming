@@ -184,6 +184,22 @@ The generated appendix should:
 - Include search-friendly headings and keywords
 - Consider different learning styles and preferences
 
+## MANDATORY AECS-Constrained Expert Review Integration
+
+**REQUIRED**: Identify and engage specific project subagents during Appendix generation to ensure AECS compliance:
+
+### Subagent Identification and Engagement
+
+**Step 1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+
+**Step 2**: Match subagents to required expertise roles and engage them by name:
+
+**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Verify all technical content is accurate, follows current best practices, and uses only concepts that learners have mastered through previous Exercises. Validate that any code examples or technical references are correct and align with the domain's standards."
+
+**Learning Design Expert**: Identify the pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Ensure the appendix properly supports Exercise-driven learning without violating Exercise Primacy. Verify that content serves as quick reference parallel to Exercises rather than replacing hands-on building. Confirm the appendix enhances rather than substitutes for practical implementation."
+
+**Content Structure Expert**: Identify the academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Ensure proper AECS vocabulary usage and formatting consistency. Verify that content follows Subject→Path→Stage→Concept→Exercise (+ Appendix parallel) hierarchy and maintains quick-reference structure. Verify clear visual hierarchy and search-friendly organization."
+
 ## Example Usage
 
 ```

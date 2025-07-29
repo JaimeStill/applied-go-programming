@@ -4,7 +4,7 @@
 Bootstrap a complete AECS project from scratch for any technical Subject. This is the genesis prompt that initializes the entire learning Path infrastructure, including auto-generation of domain-specific subagents and project structure.
 
 ## Parameters
-- **SUBJECT**: The main topic of study (e.g., "Go Programming", "Rust Systems Programming", "Kubernetes Operations")
+- **SUBJECT**: The main topic of study (e.g., "Go Programming", "Italian Cooking", "Digital Photography")
 - **TARGET_AUDIENCE**: Intended learners (e.g., "experienced developers", "system administrators", "data engineers")
 - **DIFFICULTY_PROGRESSION**: Learning complexity progression (Fundamentals to Advanced/Expert/Production)
 
@@ -163,6 +163,22 @@ EXPERIENCE_LEVEL is "Senior Technical Editor with 15+ years and AECS methodology
 FOCUS_AREAS is "AECS structure maintenance for [SUBJECT], Exercise Primacy enforcement during editing, [SUBJECT] technical accuracy, Progressive Complexity validation".
 ```
 
+## MANDATORY AECS-Constrained Path Validation
+
+**REQUIRED**: After creating Path and subagents, identify and engage them to validate the created project:
+
+### Subagent Identification and Engagement
+
+**Step 1**: Examine the newly created `.claude/agents/` directory to identify the created subagents and their capabilities.
+
+**Step 2**: Match subagents to required expertise roles and engage them by name:
+
+**Technical Implementation Expert**: Identify the newly created technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Validate that all technical concepts in the Path are accurate, buildable, and follow domain best practices. Verify that Stage progression builds proper technical foundations and that all proposed Exercises can produce tangible, working implementations."
+
+**Learning Design Expert**: Identify the newly created pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Validate that the Path enforces Exercise Primacy throughout all Stages. Verify that the learning progression eliminates passive consumption, maintains single-concept atomicity per Exercise, and builds proper dependency chains between concepts through hands-on mastery."
+
+**Content Structure Expert**: Identify the newly created academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Validate AECS vocabulary consistency and structural compliance throughout the created Path. Verify that all content follows Subject→Path→Stage→Concept→Exercise hierarchy and maintains Exercise Primacy formatting standards."
+
 ## Output Requirements
 
 Generate complete project initialization including:
@@ -172,6 +188,7 @@ Generate complete project initialization including:
 4. **Foundation Stage**: Stage 1 with fundamental concepts and exercises
 5. **Project Documentation**: CLAUDE.md and README.md
 6. **AECS Compliance**: All content enforces four core principles
+7. **Subagent Validation**: Newly created subagents validate the complete Path
 
 ## Success Criteria
 

@@ -54,7 +54,7 @@ A Path represents the complete learning journey through a Subject, organized int
 **Exercise Structure**
 Each Exercise demonstrates a single Concept through practical implementation:
 - Immediate hands-on building requirements
-- Working code that produces tangible results
+- Working implementations that produce tangible results
 - Step-by-step implementation guidance
 - Practical validation and verification
 - Real-world application context
@@ -127,7 +127,7 @@ The prompt system uses clear create-/generate- vocabulary distinction:
 
 Specialized subagents ensure AECS compliance across all content:
 
-- **Domain Expert**: Code implementation with Exercise Primacy and Concept Atomicity enforcement
+- **Domain Expert**: Technical implementation with Exercise Primacy and Concept Atomicity enforcement
 - **CS Professor**: Exercise-driven learning validation with Applied Understanding verification
 - **Academic Editor**: AECS structure maintenance with Progressive Complexity validation
 
@@ -207,7 +207,7 @@ AECS Exercises follow atomic, practical structure:
 
 1. **Single Concept Implementation**
    - One Concept addressed through immediate practical building
-   - Working code that produces tangible, testable results
+   - Working implementations that produce tangible, testable results
    - No theoretical explanations without direct practical application
 
 2. **Dependency Verification**
@@ -217,12 +217,12 @@ AECS Exercises follow atomic, practical structure:
 
 3. **Practical Building Task**
    - Hands-on implementation requirements
-   - Immediate engagement in working code creation
+   - Immediate engagement in practical implementation creation
    - Tangible outcomes that can be seen, run, or tested
 
 4. **Applied Validation**
    - Practical verification methods (not theoretical assessment)
-   - Working code demonstrations
+   - Working implementation demonstrations
    - Real-world implementation testing
 
 #### AECS Exercise Violations to Prevent
@@ -238,7 +238,7 @@ AECS Exercises follow atomic, practical structure:
 - Single-concept focus with immediate practical building
 - Working implementations producing tangible results
 - Progressive dependency on previously mastered Concepts
-- Hands-on tasks requiring practical code creation
+- Hands-on tasks requiring practical implementation creation
 
 ## Best Practices
 
@@ -280,7 +280,7 @@ AECS Exercises follow atomic, practical structure:
 - Verify atomic scope: "Split complex Exercises into atomic components"
 
 **3. Require Applied Understanding**
-- Request practical building: "Implement working code", "Create tangible results", "Build practical demonstrations"
+- Request practical building: "Implement working examples", "Create tangible results", "Build practical demonstrations"
 - Prevent theoretical content: "Replace explanations with hands-on building", "Remove passive consumption elements"
 
 **4. Validate Progressive Complexity**

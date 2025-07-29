@@ -4,7 +4,7 @@
 Initialize Exercises flexibly with intelligent placement logic. Handles multiple Exercise scenarios: standalone concept demonstration, Stage enhancement for unclear concepts, and new concept integration into existing Stages.
 
 ## Parameters
-- **CONCEPT**: The single, atomic technical concept being implemented (e.g., "Function Definition", "Loop Implementation", "Class Inheritance")
+- **CONCEPT**: The single, atomic concept being implemented (e.g., "Function Definition", "Color Mixing", "Knife Grip Technique")
 - **SCENARIO**: Optional - type of Exercise (standalone/enhancement/integration) - uses inverse-prompting if not specified
 - **TARGET_LOCATION**: Optional - placement hint (uses intelligent defaults and inverse-prompting if needed)
 
@@ -130,7 +130,7 @@ Using the exercise template at `_framework/_templates/exercise.md`, create:
 
 **Single Concept Implementation**:
 - **Atomic Focus**: Address exactly one concept through practical building
-- **Working Code**: Implement concept through hands-on coding
+- **Working Implementation**: Implement concept through hands-on building
 - **Tangible Results**: Produce observable, testable outcomes
 - **Implementation Guidance**: Step-by-step building instructions
 
@@ -191,6 +191,22 @@ Proceeding with Exercise creation or need adjustments?"
 - **Numbering Logic**: Maintain proper Exercise numbering sequences
 - **Reference Consistency**: Ensure all references remain accurate
 
+## MANDATORY AECS-Constrained Exercise Validation
+
+**REQUIRED**: After creating Exercise, identify and engage specific project subagents to validate AECS compliance:
+
+### Subagent Identification and Engagement
+
+**Step 1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+
+**Step 2**: Match subagents to required expertise roles and engage them by name:
+
+**Technical Implementation Expert**: Identify and request the technical/engineering subagent to "validate that the Exercise concept can be implemented through practical building. Verify that all proposed examples work correctly and follow domain best practices using only previously mastered concepts from prior Exercises."
+
+**Learning Design Expert**: Ask the pedagogical/educational subagent to "validate that the Exercise enforces Exercise Primacy through hands-on building rather than passive consumption. Verify single-concept atomicity and eliminate any multi-concept violations. Validate proper dependency chains and ensure all learning occurs through practical implementation."
+
+**Content Structure Expert**: Have the academic editing/writing subagent "validate AECS vocabulary consistency and structural compliance in the created Exercise. Verify that content follows proper AECS formatting with Exercise Primacy and single-concept focus, using Subject→Path→Stage→Concept→Exercise hierarchy throughout."
+
 ## Output Requirements
 
 Generate complete Exercise initialization including:
@@ -200,6 +216,7 @@ Generate complete Exercise initialization including:
 4. **Directory Management**: Create subdirectories as needed
 5. **AECS Compliance**: All content enforces four core principles
 6. **Dependency Documentation**: Clear prerequisite identification
+7. **Subagent Validation**: Project subagents validate the complete Exercise
 
 ## Success Criteria
 
@@ -208,7 +225,7 @@ The created Exercise MUST:
 - **Intelligent Placement**: Use smart analysis and inverse-prompting for optimal location
 - **Concept Atomicity**: Address exactly one concept through practical building
 - **Exercise Primacy**: Center on hands-on implementation producing tangible results
-- **Applied Understanding**: Require working code that can be run and tested
+- **Applied Understanding**: Require working implementations that can be demonstrated and tested
 - **Progressive Complexity**: Use only previously mastered concepts (where applicable)
 - **Automatic Integration**: Update infrastructure files as needed
 
@@ -224,7 +241,7 @@ The created Exercise MUST:
 **Required Elements**:
 - Single-concept focus with immediate practical building
 - Working implementations producing tangible results
-- Hands-on tasks requiring code creation and testing
+- Hands-on tasks requiring practical implementation and testing
 - Clear success criteria based on working implementations
 - Proper integration with existing infrastructure
 

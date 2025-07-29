@@ -141,6 +141,22 @@ Please confirm or suggest modifications."
 - **Future Preparation**: Consider what concepts this Stage enables
 - **Gap Detection**: Identify missing prerequisite concepts
 
+## MANDATORY AECS-Constrained Stage Validation
+
+**REQUIRED**: After creating Stage, identify and engage specific project subagents to validate AECS compliance:
+
+### Subagent Identification and Engagement
+
+**Step 1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+
+**Step 2**: Match subagents to required expertise roles and engage them by name:
+
+**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Validate that all technical concepts in the Stage are accurate, buildable, and follow domain best practices. Verify that all planned Exercises can produce tangible, working implementations using only previously mastered concepts from prior Exercises."
+
+**Learning Design Expert**: Identify the pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Validate that the Stage enforces Exercise Primacy throughout all planned Exercises. Verify that the Exercise progression eliminates passive consumption, maintains single-concept atomicity per Exercise, and builds proper dependency chains between concepts through hands-on mastery."
+
+**Content Structure Expert**: Identify the academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Validate AECS vocabulary consistency and structural compliance throughout the created Stage. Verify that all content follows Subject→Path→Stage→Concept→Exercise hierarchy and maintains Exercise Primacy formatting standards."
+
 ## Output Requirements
 
 Generate complete Stage initialization including:
@@ -150,6 +166,7 @@ Generate complete Stage initialization including:
 4. **Integration Updates**: PATH.md updates if applicable
 5. **Dependency Documentation**: Clear prerequisite and progression chains
 6. **AECS Compliance**: All content enforces four core principles
+7. **Subagent Validation**: Project subagents validate the complete Stage
 
 ## Success Criteria
 

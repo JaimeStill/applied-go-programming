@@ -1,11 +1,13 @@
 # Generate Stage Prompt
 
 ## Purpose
-Create a detailed Stage with Exercise progression for a specific Stage within an existing Path, following the Agentic Exercise Curriculum System (AECS) methodology with strict enforcement of all four AECS principles.
+Create a detailed Stage with Exercise progression for any learning subject, following the Agentic Exercise Curriculum System (AECS) methodology with strict enforcement of all four AECS principles.
 
 ## Parameters
-- **STAGE_TITLE**: The specific Stage name from the Path
-- **TARGET_CONCEPTS**: Abstract description of the concepts this Stage should cover (e.g., "concurrent programming patterns", "web server fundamentals")
+<parameters>
+<stage_title>The specific Stage name from the Path</stage_title>
+<target_concepts>Abstract description of the concepts this Stage should cover (e.g., "concurrent programming patterns", "color theory fundamentals", "knife skills basics")</target_concepts>
+</parameters>
 
 ## AECS Compliance Requirements
 
@@ -91,11 +93,21 @@ Ensure the Stage:
 - **Applied Understanding**: All learning through practical implementation producing results
 - **Progressive Complexity**: Proper dependency chains through mastered concept building
 
-### Step 6: AECS-Constrained Expert Review Integration
-The generated Stage MUST be reviewed by AECS-constrained subagents:
-- **go-engineer**: Verify practical implementation feasibility and hands-on building requirements
-- **cs-professor**: Validate Exercise-driven progression and single-concept atomicity
-- **academic-editor**: Ensure AECS vocabulary and structure compliance
+### Step 6: MANDATORY AECS-Constrained Expert Review Integration
+
+**REQUIRED**: Identify and engage specific project subagents during Stage generation to ensure AECS compliance:
+
+### Subagent Discovery and Engagement
+
+**Step 6.1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+
+**Step 6.2**: Match subagents to required expertise roles and engage using natural language delegation:
+
+**Technical Implementation Expert**: Identify and request the technical/implementation subagent to "implement working [subject] examples that demonstrate each concept through hands-on building. Ensure every Exercise produces tangible, testable results using only previously mastered concepts. Fix any violations where learners consume rather than build."
+
+**Learning Design Expert**: Ask the pedagogical/educational subagent to "restructure this Stage content to enforce Exercise Primacy by ensuring learners immediately engage in hands-on [subject] practice rather than theoretical study. Verify single-concept atomicity per Exercise and eliminate any passive consumption elements."
+
+**Content Structure Expert**: Have the academic editing/writing subagent "fix any deviations from AECS vocabulary and structure. Verify that content follows Subject→Path→Stage→Concept→Exercise hierarchy and maintains consistent AECS terminology throughout, ensuring all sections center on doing rather than consuming."
 
 ## Output Requirements
 
@@ -109,14 +121,15 @@ Generate a complete Stage document that includes:
 
 ## Success Criteria
 
-The generated Stage MUST:
-- Enforce Exercise Primacy with hands-on building throughout all Exercises
-- Maintain Concept Atomicity with single-concept per Exercise
-- Require Applied Understanding through practical implementation producing tangible results
-- Follow Progressive Complexity with proper dependency chains between built concepts
-- Use correct AECS vocabulary: Subject→Path→Stage→Concept→Exercise
-- Eliminate passive consumption and theoretical content
-- Focus on building working implementations rather than explanatory content
+<success_criteria>
+The generated Stage MUST demonstrate:
+- **Exercise Primacy**: Every Exercise centers on hands-on building with immediate practical engagement
+- **Concept Atomicity**: Each Exercise addresses exactly one concept through focused implementation  
+- **Applied Understanding**: All learning occurs through building working examples with tangible, testable results
+- **Progressive Complexity**: Clear dependency chains where each Exercise builds only on previously mastered concepts
+- **AECS Vocabulary**: Consistent use of Subject→Path→Stage→Concept→Exercise hierarchy
+- **Implementation Focus**: Working examples that can be built, run, and verified rather than theoretical explanations
+</success_criteria>
 
 ## AECS Violations to Prevent
 
@@ -142,8 +155,18 @@ Generated Stage documents should be saved as:
 
 ## Example Usage
 
-```
-Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[abstract concept description for the domain]".
-```
+<example>
+**Subject**: Digital Photography
+**Input**: Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "Camera Fundamentals". TARGET_CONCEPTS is "aperture control, shutter speed mastery, ISO sensitivity".
 
-This will generate a complete AECS-compliant Stage document ready for Exercise-by-Exercise development, ensuring all four AECS principles are enforced throughout.
+**Expected Output**: Stage document with atomic Exercises like:
+- Exercise 1: Demonstrate aperture effects through hands-on shooting
+- Exercise 2: Build shutter speed control through motion capture practice  
+- Exercise 3: Implement ISO adjustment through lighting experiments
+
+Each Exercise produces tangible photo results demonstrating single concepts.
+</example>
+
+```
+Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[abstract concept description]".
+```

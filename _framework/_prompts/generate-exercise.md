@@ -133,11 +133,21 @@ Fill the template with:
 - Detailed explanation of design decisions
 - Performance and trade-off analysis
 
-### Step 5: Expert Review Integration
-The generated Exercise should be automatically reviewed by AECS-constrained subagents:
-- **go-engineer**: Verify single-concept implementation feasibility and hands-on building requirements
-- **cs-professor**: Validate Exercise atomicity and practical implementation focus
-- **academic-editor**: Ensure AECS vocabulary and structure compliance
+### Step 5: MANDATORY AECS-Constrained Expert Review Integration
+
+**REQUIRED**: Identify and engage specific project subagents during Exercise generation to ensure AECS compliance:
+
+### Subagent Identification and Engagement
+
+**Step 5.1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+
+**Step 5.2**: Match subagents to required expertise roles and engage them by name:
+
+**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Implement working code that demonstrates the single concept through practical building. Verify that the Exercise produces tangible results and follows domain best practices with single-concept focus. Fix any code that doesn't compile or run correctly, and verify all implementations use only previously mastered concepts from prior Exercises."
+
+**Learning Design Expert**: Identify the pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Restructure content enforcing Exercise Primacy by ensuring learners immediately engage in hands-on programming rather than passive consumption. Verify single-concept atomicity and eliminate any multi-concept violations. Validate proper dependency chains and ensure all learning occurs through practical building of working code."
+
+**Content Structure Expert**: Identify the academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Fix any deviations from AECS vocabulary and structure. Verify that Exercise follows proper AECS formatting with Exercise Primacy and single-concept focus. Verify content uses Subject→Path→Stage→Concept→Exercise hierarchy and maintains consistent terminology that centers on doing rather than consuming."
 
 ### Step 6: AECS Principle Verification
 Ensure the Exercise:
