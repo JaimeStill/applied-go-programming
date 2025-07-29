@@ -143,19 +143,21 @@ Please confirm or suggest modifications."
 
 ## MANDATORY AECS-Constrained Stage Validation
 
-**REQUIRED**: After creating Stage, identify and engage specific project subagents to validate AECS compliance:
+**REQUIRED**: After creating the Stage content, engage project subagents to review and validate AECS compliance. Subagents provide feedback only - they do NOT create new artifacts.
 
-### Subagent Identification and Engagement
+### Subagent Review Process
 
-**Step 1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+**Step 1**: Identify available subagents in `.claude/agents/` directory.
 
-**Step 2**: Match subagents to required expertise roles and engage them by name:
+**Step 2**: Engage each subagent to review the created Stage content:
 
-**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Validate that all technical concepts in the Stage are accurate, buildable, and follow domain best practices. Verify that all planned Exercises can produce tangible, working implementations using only previously mastered concepts from prior Exercises."
+**Technical Implementation Review**: Request the technical/engineering subagent to "review this Stage content and validate that all technical concepts are accurate and buildable. Suggest fixes for any Exercises that can't produce tangible, working implementations. Verify all concepts use only previously mastered prerequisites."
 
-**Learning Design Expert**: Identify the pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Validate that the Stage enforces Exercise Primacy throughout all planned Exercises. Verify that the Exercise progression eliminates passive consumption, maintains single-concept atomicity per Exercise, and builds proper dependency chains between concepts through hands-on mastery."
+**Learning Design Review**: Ask the pedagogical/educational subagent to "review this Stage for Exercise Primacy compliance. Identify any passive consumption elements and suggest restructuring. Validate single-concept atomicity per Exercise and proper dependency chains."
 
-**Content Structure Expert**: Identify the academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Validate AECS vocabulary consistency and structural compliance throughout the created Stage. Verify that all content follows Subject→Path→Stage→Concept→Exercise hierarchy and maintains Exercise Primacy formatting standards."
+**Content Structure Review**: Have the academic editing/writing subagent to "review this Stage for AECS vocabulary and structure compliance. Identify any hierarchy violations and suggest fixes to maintain Subject→Path→Stage→Concept→Exercise format."
+
+**Step 3**: Incorporate subagent feedback to refine the Stage, ensuring all AECS principles are enforced.
 
 ## Output Requirements
 

@@ -133,21 +133,23 @@ Fill the template with:
 - Detailed explanation of design decisions
 - Performance and trade-off analysis
 
-### Step 5: MANDATORY AECS-Constrained Expert Review Integration
+### Step 5: MANDATORY AECS-Constrained Expert Review
 
-**REQUIRED**: Identify and engage specific project subagents during Exercise generation to ensure AECS compliance:
+**REQUIRED**: After generating the Exercise content, engage project subagents to review and refine for AECS compliance. Subagents provide feedback only - they do NOT create new artifacts.
 
-### Subagent Identification and Engagement
+### Subagent Review Process
 
-**Step 5.1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+**Step 5.1**: Identify available subagents in `.claude/agents/` directory.
 
-**Step 5.2**: Match subagents to required expertise roles and engage them by name:
+**Step 5.2**: Engage each subagent to review the generated Exercise content:
 
-**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Implement working code that demonstrates the single concept through practical building. Verify that the Exercise produces tangible results and follows domain best practices with single-concept focus. Fix any code that doesn't compile or run correctly, and verify all implementations use only previously mastered concepts from prior Exercises."
+**Technical Implementation Review**: Request the technical/engineering subagent to "review this Exercise content and identify any code that doesn't produce tangible, testable results. Suggest specific fixes to ensure the implementation demonstrates hands-on building with single-concept focus. Verify all code uses only previously mastered concepts."
 
-**Learning Design Expert**: Identify the pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Restructure content enforcing Exercise Primacy by ensuring learners immediately engage in hands-on programming rather than passive consumption. Verify single-concept atomicity and eliminate any multi-concept violations. Validate proper dependency chains and ensure all learning occurs through practical building of working code."
+**Learning Design Review**: Ask the pedagogical/educational subagent to "review this Exercise for Exercise Primacy violations. Identify any passive consumption elements and suggest how to restructure for immediate hands-on engagement. Verify single-concept atomicity and proper dependency chains."
 
-**Content Structure Expert**: Identify the academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Fix any deviations from AECS vocabulary and structure. Verify that Exercise follows proper AECS formatting with Exercise Primacy and single-concept focus. Verify content uses Subject→Path→Stage→Concept→Exercise hierarchy and maintains consistent terminology that centers on doing rather than consuming."
+**Content Structure Review**: Have the academic editing/writing subagent to "review this Exercise for AECS vocabulary and structure violations. Identify deviations from Subject→Path→Stage→Concept→Exercise hierarchy and suggest fixes to ensure all sections center on doing rather than consuming."
+
+**Step 5.3**: Incorporate subagent feedback into the final Exercise document, ensuring all AECS principles are enforced.
 
 ### Step 6: AECS Principle Verification
 Ensure the Exercise:

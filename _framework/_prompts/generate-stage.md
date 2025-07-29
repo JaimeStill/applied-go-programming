@@ -93,21 +93,23 @@ Ensure the Stage:
 - **Applied Understanding**: All learning through practical implementation producing results
 - **Progressive Complexity**: Proper dependency chains through mastered concept building
 
-### Step 6: MANDATORY AECS-Constrained Expert Review Integration
+### Step 6: MANDATORY AECS-Constrained Expert Review
 
-**REQUIRED**: Identify and engage specific project subagents during Stage generation to ensure AECS compliance:
+**REQUIRED**: After generating the Stage content, engage project subagents to review and refine for AECS compliance. Subagents provide feedback only - they do NOT create new artifacts.
 
-### Subagent Discovery and Engagement
+### Subagent Review Process
 
-**Step 6.1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+**Step 6.1**: Identify available subagents in `.claude/agents/` directory.
 
-**Step 6.2**: Match subagents to required expertise roles and engage using natural language delegation:
+**Step 6.2**: Engage each subagent to review the generated Stage content:
 
-**Technical Implementation Expert**: Identify and request the technical/implementation subagent to "implement working [subject] examples that demonstrate each concept through hands-on building. Ensure every Exercise produces tangible, testable results using only previously mastered concepts. Fix any violations where learners consume rather than build."
+**Technical Implementation Review**: Request the technical/implementation subagent to "review this Stage content and identify any violations where Exercise implementations don't produce tangible, testable results. Suggest specific fixes to ensure every Exercise demonstrates hands-on building using only previously mastered concepts."
 
-**Learning Design Expert**: Ask the pedagogical/educational subagent to "restructure this Stage content to enforce Exercise Primacy by ensuring learners immediately engage in hands-on [subject] practice rather than theoretical study. Verify single-concept atomicity per Exercise and eliminate any passive consumption elements."
+**Learning Design Review**: Ask the pedagogical/educational subagent to "review this Stage content for Exercise Primacy violations. Identify any passive consumption elements and suggest how to restructure for immediate hands-on engagement. Verify single-concept atomicity per Exercise."
 
-**Content Structure Expert**: Have the academic editing/writing subagent "fix any deviations from AECS vocabulary and structure. Verify that content follows Subject→Path→Stage→Concept→Exercise hierarchy and maintains consistent AECS terminology throughout, ensuring all sections center on doing rather than consuming."
+**Content Structure Review**: Have the academic editing/writing subagent to "review this Stage content for AECS vocabulary and structure violations. Identify deviations from Subject→Path→Stage→Concept→Exercise hierarchy and suggest fixes to ensure all sections center on doing rather than consuming."
+
+**Step 6.3**: Incorporate subagent feedback into the final Stage document, ensuring all AECS principles are enforced.
 
 ## Output Requirements
 

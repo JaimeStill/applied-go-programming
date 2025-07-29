@@ -105,11 +105,21 @@ Ensure the appendix is:
 - **Current**: Uses up-to-date practices and tools
 - **Complete**: Addresses the identified need comprehensively
 
-### Step 6: Expert Review Integration
-The generated appendix should be reviewed by:
-- **Domain Expert**: Technical accuracy and completeness
-- **Education Expert**: Usefulness for learners and integration with curriculum
-- **Academic Editor**: Clarity, organization, and consistency
+### Step 6: MANDATORY Expert Review
+
+**REQUIRED**: After generating the appendix content, engage project subagents to review for quality and accuracy. Subagents provide feedback only - they do NOT create new artifacts.
+
+**Subagent Review Process**:
+
+**Step 6.1**: Identify available subagents in `.claude/agents/` directory.
+
+**Step 6.2**: Engage each subagent to review the generated appendix:
+
+- **Technical Review**: Request the technical/domain expert to "review this appendix for technical accuracy and completeness. Identify any incorrect information and suggest fixes."
+- **Learning Review**: Ask the pedagogical expert to "review this appendix for usefulness to learners. Suggest improvements for integration with the curriculum."
+- **Structure Review**: Have the academic editor to "review this appendix for clarity and organization. Suggest improvements for consistency and readability."
+
+**Step 6.3**: Incorporate subagent feedback to refine the appendix.
 
 ## Common Appendix Types
 

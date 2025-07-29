@@ -193,19 +193,21 @@ Proceeding with Exercise creation or need adjustments?"
 
 ## MANDATORY AECS-Constrained Exercise Validation
 
-**REQUIRED**: After creating Exercise, identify and engage specific project subagents to validate AECS compliance:
+**REQUIRED**: After creating the Exercise content, engage project subagents to review and validate AECS compliance. Subagents provide feedback only - they do NOT create new artifacts.
 
-### Subagent Identification and Engagement
+### Subagent Review Process
 
-**Step 1**: Examine `.claude/agents/` directory to identify available project subagents and their capabilities.
+**Step 1**: Identify available subagents in `.claude/agents/` directory.
 
-**Step 2**: Match subagents to required expertise roles and engage them by name:
+**Step 2**: Engage each subagent to review the created Exercise content:
 
-**Technical Implementation Expert**: Identify and request the technical/engineering subagent to "validate that the Exercise concept can be implemented through practical building. Verify that all proposed examples work correctly and follow domain best practices using only previously mastered concepts from prior Exercises."
+**Technical Implementation Review**: Request the technical/engineering subagent to "review this Exercise and validate that the concept can be implemented through practical building. Identify any code that won't work correctly and suggest fixes. Verify all examples use only previously mastered concepts."
 
-**Learning Design Expert**: Ask the pedagogical/educational subagent to "validate that the Exercise enforces Exercise Primacy through hands-on building rather than passive consumption. Verify single-concept atomicity and eliminate any multi-concept violations. Validate proper dependency chains and ensure all learning occurs through practical implementation."
+**Learning Design Review**: Ask the pedagogical/educational subagent to "review this Exercise for Exercise Primacy compliance. Identify any passive consumption elements and suggest how to restructure for hands-on building. Validate single-concept atomicity and proper dependency chains."
 
-**Content Structure Expert**: Have the academic editing/writing subagent "validate AECS vocabulary consistency and structural compliance in the created Exercise. Verify that content follows proper AECS formatting with Exercise Primacy and single-concept focus, using Subject→Path→Stage→Concept→Exercise hierarchy throughout."
+**Content Structure Review**: Have the academic editing/writing subagent to "review this Exercise for AECS vocabulary and structure compliance. Identify any formatting violations and suggest fixes to maintain proper Exercise format with single-concept focus."
+
+**Step 3**: Incorporate subagent feedback to refine the Exercise, ensuring all AECS principles are enforced.
 
 ## Output Requirements
 

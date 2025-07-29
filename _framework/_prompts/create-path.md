@@ -165,19 +165,21 @@ FOCUS_AREAS is "AECS structure maintenance for [SUBJECT], Exercise Primacy enfor
 
 ## MANDATORY AECS-Constrained Path Validation
 
-**REQUIRED**: After creating Path and subagents, identify and engage them to validate the created project:
+**REQUIRED**: After creating the Path content and subagents, engage the newly created subagents to review and validate AECS compliance. Subagents provide feedback only - they do NOT create new artifacts.
 
-### Subagent Identification and Engagement
+### Subagent Review Process
 
-**Step 1**: Examine the newly created `.claude/agents/` directory to identify the created subagents and their capabilities.
+**Step 1**: Identify the newly created subagents in `.claude/agents/` directory.
 
-**Step 2**: Match subagents to required expertise roles and engage them by name:
+**Step 2**: Engage each newly created subagent to review the generated Path content:
 
-**Technical Implementation Expert**: Identify the newly created technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Validate that all technical concepts in the Path are accurate, buildable, and follow domain best practices. Verify that Stage progression builds proper technical foundations and that all proposed Exercises can produce tangible, working implementations."
+**Technical Implementation Review**: Request the newly created technical/engineering subagent to "review this Path content and validate that all technical concepts are accurate and buildable. Identify any Stage progressions that don't build proper foundations and suggest fixes. Verify all proposed Exercises can produce tangible implementations."
 
-**Learning Design Expert**: Identify the newly created pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Validate that the Path enforces Exercise Primacy throughout all Stages. Verify that the learning progression eliminates passive consumption, maintains single-concept atomicity per Exercise, and builds proper dependency chains between concepts through hands-on mastery."
+**Learning Design Review**: Ask the newly created pedagogical/educational subagent to "review this Path for Exercise Primacy compliance throughout all Stages. Identify any passive consumption elements and suggest restructuring. Validate single-concept atomicity and proper dependency chains."
 
-**Content Structure Expert**: Identify the newly created academic editing/writing subagent (e.g., academic-editor, content-editor) and engage using @[subagent-name]. Request: "Validate AECS vocabulary consistency and structural compliance throughout the created Path. Verify that all content follows Subject→Path→Stage→Concept→Exercise hierarchy and maintains Exercise Primacy formatting standards."
+**Content Structure Review**: Have the newly created academic editing/writing subagent to "review this Path for AECS vocabulary and structure compliance. Identify any hierarchy violations and suggest fixes to maintain Subject→Path→Stage→Concept→Exercise format throughout."
+
+**Step 3**: Incorporate subagent feedback to refine the Path, ensuring all AECS principles are enforced.
 
 ## Output Requirements
 
