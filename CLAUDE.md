@@ -1,198 +1,251 @@
-# Go Mastery Curriculum Development
+# Applied Go Programming - Project Implementation Guide
+
+## AECS Framework Compliance
+
+**Primary Directive**: Follow the Agentic Exercise Curriculum System (AECS) methodology as defined in `_framework/CLAUDE.md`. All content development must enforce Exercise Primacy, Concept Atomicity, Applied Understanding, and Progressive Complexity.
 
 ## Project Overview
 
-This repository contains a comprehensive Go programming curriculum designed to take developers from Go fundamentals to production mastery. The curriculum is structured as a book with multiple chapters, each containing learning roadmaps and practical exercises.
+This repository contains a comprehensive Go programming learning Path built using AECS methodology. The Path takes developers from Go fundamentals to production mastery through hands-on Exercise completion, where every learning interaction centers on doing rather than consuming.
 
 ## Repository Structure
 
 ```
-go-mastery/
-├── CLAUDE.md                    # This file
+applied-go-programming/
+├── CLAUDE.md                    # This file - Project implementation guide
+├── PATH.md                      # Go Programming learning path
+├── README.md                    # Public-facing documentation
+├── _framework/                  # AECS methodology and templates
+│   ├── README.md               # Complete AECS methodology
+│   ├── CLAUDE.md               # AECS-specific Claude directives
+│   ├── _templates/             # AECS-compliant content templates
+│   └── _prompts/               # Exercise-first generation prompts
 ├── .claude/
-│   └── agents/                  # Project-specific sub agents
-│       ├── go-engineer.md       # Go architecture expert
-│       ├── cs-professor.md      # CS education expert  
-│       └── academic-editor.md   # Learning materials editor
-├── chapters/
-│   ├── 00-quick-reference/      # Go syntax quick reference
-│   ├── 01-concurrency/          # Concurrency and parallelism
-│   ├── 02-data-structures/      # Data structures and algorithms
-│   └── ...                      # Additional chapters
-├── exercises/
-│   └── ...                      # Generated exercise files
-└── README.md                    # Public-facing documentation
+│   └── agents/                 # AECS-constrained subagents
+│       ├── go-engineer.md      # Go code implementation expert
+│       ├── cs-professor.md     # Exercise-driven learning expert  
+│       └── academic-editor.md  # AECS content structure expert
+└── stages/                     # Exercise-driven learning content
+    ├── 01-fundamentals/        # Stage 1: Go basics through Exercises
+    ├── 02-concurrency/         # Stage 2: Concurrent programming
+    ├── ...                     # Additional stages
+    └── appendices/             # Go-specific reference materials
 ```
 
-## Claude Code Workflow
+## Go-Specific AECS Implementation
 
-This project uses Claude Code's sub agents feature to ensure high-quality content generation. Sub agents are automatically invoked based on the task at hand, or you can explicitly request their help.
+### Subject Context
+- **Subject**: Go Programming
+- **Target Audience**: Experienced developers familiar with other languages
+- **Approach**: Exercise-driven mastery from fundamentals to production
 
-### Available Sub Agents
+### Stage Progression
 
-1. **go-engineer** - Reviews and generates Go code with production-level expertise
-2. **cs-professor** - Ensures concepts are explained clearly with proper learning progression  
-3. **academic-editor** - Polishes content for consistency, clarity, and structure
+The Go Programming Path follows this progression:
 
-### How Sub Agents Work
+1. **Fundamentals** - Basic Go concepts through atomic Exercises
+2. **Concurrency** - Goroutines, channels, and concurrent patterns
+3. **Data Structures** - Advanced data handling and algorithms  
+4. **Web Programming** - HTTP servers and web applications
+5. **Database Integration** - Data persistence and management
+6. **Testing & Quality** - Testing strategies and code quality
+7. **Performance** - Optimization and profiling
+8. **Deployment** - Containerization and deployment
+9. **Monitoring** - Observability and debugging
+10. **Advanced Patterns** - Complex architectural patterns
+11. **Production Operations** - Production-ready systems
 
-- Each sub agent has its own context window, preventing pollution of the main conversation
-- They are configured with specific tools and permissions relevant to their expertise
-- Claude Code automatically delegates appropriate tasks to them
-- You can also explicitly invoke them: "Ask go-engineer to review this concurrent code"
+### Go-Specific Exercise Requirements
+
+All Go Exercises must:
+
+- **Compile and Run**: Use Go 1.24+ compatible code that compiles without errors
+- **Produce Tangible Results**: Generate console output, files, or testable behavior
+- **Follow Go Idioms**: Demonstrate idiomatic Go patterns and conventions
+- **Build Incrementally**: Each Exercise uses only concepts mastered in previous Exercises
+- **Single Concept Focus**: Address exactly one Go concept per Exercise
+
+### Code Quality Standards
+
+- **Go Standards**: Follow official Go style guide and best practices
+- **Error Handling**: Include proper error handling patterns
+- **Resource Management**: Demonstrate proper resource cleanup
+- **Documentation**: Include clear, practical comments explaining implementation
+- **Testing**: Provide testable examples where appropriate
+
+## AECS-Constrained Subagent Usage
+
+### Go Engineer
+Use for Go-specific technical implementation:
+```
+"Implement working Go code that demonstrates [single concept] through practical application. Ensure the Exercise produces tangible results and follows Go best practices."
+```
+
+### CS Professor  
+Use for Exercise-driven learning validation:
+```
+"Restructure this content to enforce Exercise Primacy by ensuring learners immediately engage in hands-on Go programming. Verify single-concept atomicity."
+```
+
+### Academic Editor
+Use for AECS structure enforcement:
+```
+"Fix any deviations from AECS vocabulary and structure. Ensure content follows Subject→Path→Stage→Concept→Exercise hierarchy for Go programming."
+```
+
+## Content Placement Conventions
+
+### Exercise Placement Logic
+
+**Standalone Exercises**: `/standalone/[concept].md`
+- Independent concept demonstrations outside the official learning path
+- Not part of main progression - exploratory or supplementary concepts
+- Example: `/standalone/binary-search-implementation.md`
+
+**Enhancement Exercises**: `/stages/XX-[stage]/enhancements/[concept].md`  
+- Expound upon concepts not fully understood within existing Stages
+- Supplementary to core Stage progression
+- Example: `/stages/02-concurrency/enhancements/goroutine-error-handling.md`
+
+**Stage Integration Exercises**: `/stages/XX-[stage]/XX-[concept].md`
+- Add new concept Exercises to existing Stages (updates stage.md automatically)
+- Full integration with Stage progression
+- Example: `/stages/04-web-programming/03-json-marshaling.md`
+
+### Directory Structure
+```
+applied-go-programming/
+├── standalone/                    # Independent exercises (outside official path)
+│   └── [concept].md
+└── stages/                        # Official learning path
+    └── XX-[stage]/
+        ├── stage.md              # Auto-updated for integrations
+        ├── XX-[concept].md       # Core exercises
+        └── enhancements/         # Enhancement subdirectory
+            └── [concept].md      # Concept expansions
+```
 
 ## Content Development Process
 
-### 1. Initial Content Generation
+### 1. Exercise-First Development
 
-When creating new content:
+For new Go content:
+1. Identify the single Go concept to be mastered
+2. Create an Exercise demonstrating this concept through working code
+3. Ensure the Exercise produces immediate, observable results
+4. Verify the Exercise uses only previously mastered Go concepts
 
-- Start by outlining the topic and learning objectives
-- Generate initial content focusing on accuracy and clarity
-- Let Claude Code automatically delegate to relevant sub agents
+### 2. AECS Compliance Verification
 
-### 2. Review and Refinement
+Every Go Exercise must pass:
+- **Exercise Primacy**: Centers on writing working Go code
+- **Concept Atomicity**: Addresses exactly one Go concept  
+- **Applied Understanding**: Requires building functional Go programs
+- **Progressive Complexity**: Uses only previously learned Go features
 
-For comprehensive review:
+### 3. Go-Specific Validation
 
-- "Have go-engineer review all code examples in this chapter"
-- "Ask cs-professor to validate the learning progression"
-- "Get academic-editor to polish the final content"
+Additional Go requirements:
+- Code compiles with `go build` or `go run`
+- Follows `go fmt` formatting standards
+- Passes `go vet` analysis
+- Includes practical error handling
+- Demonstrates real-world Go usage patterns
 
-### 3. Validation
+## Development Commands
 
-Before finalizing:
+### Content Generation
 
-- Ensure all code compiles and runs correctly
-- Verify learning objectives are met
-- Check formatting and consistency
+**Creation Commands (Initialize from scratch)**:
+```bash
+# Create new Stage independently
+Execute _framework/_prompts/create-stage.md. STAGE_TITLE is "[Go Topic]". TARGET_CONCEPTS is "[abstract concept description]"
 
-## Content Standards
+# Create Exercise with flexible placement
+Execute _framework/_prompts/create-exercise.md. CONCEPT is "[Single Go Concept]". SCENARIO is "[standalone/enhancement/integration]"
 
-### Code Examples
-
-- Go 1.24+ compatible
-- Follow official Go style guide
-- Self-contained and runnable
-- Well-commented with explanations
-
-### Exercise Format
-
-Each exercise must contain:
-
-1. **Overview** - What the exercise covers
-2. **Code Examples** - Demonstrating key concepts
-3. **Understanding the Concept** - How to think about the topic
-4. **Your Task** - Hands-on exercise instructions
-
-### Writing Guidelines
-
-- Clear, concise technical writing
-- Progressive complexity
-- Real-world examples
-- Consistent terminology
-
-## Working with Sub Agents
-
-### Critical: Effective Subagent Engagement
-
-**Problem**: Subagents provide analysis but don't take action when asked to "review" or "validate".
-**Solution**: Always request specific actions that result in concrete improvements.
-
-### Action-Oriented Prompting (Required)
-
-❌ **Don't Ask For Analysis**:
-- "Review the code quality"
-- "Validate the learning progression"
-- "Check for consistency issues"
-
-✅ **Request Specific Actions**:
-- "Fix code quality issues by editing the files directly"
-- "Improve learning progression by restructuring sections in the files"
-- "Fix consistency issues you find by updating the content"
-
-### Direct Action Requirements
-
-Always specify what the subagent should accomplish:
-
-```
-"Fix any non-idiomatic Go patterns in chapter1.md by editing the file directly"
-
-"Standardize all heading formats across these files by updating them: [list]"
-
-"Create missing bridge content between concepts by adding new sections"
+# Create domain-specific subagent
+Execute _framework/_prompts/create-subagent.md. DOMAIN is "Go Programming". ROLE is "Implementation Expert"
 ```
 
-### Effective Subagent Invocation Examples
+**Generation Commands (Derive from existing infrastructure)**:
+```bash
+# Generate Stage from existing PATH.md
+Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "[Go Topic]". TARGET_CONCEPTS is "[concepts]"
 
-**Code Review (go-engineer)**:
-```
-"Fix any compilation errors, security issues, or non-idiomatic patterns in /path/to/file.go by editing the file directly. After your changes, all code should compile with Go 1.24+ and follow production best practices."
-```
+# Generate Exercise with context derivation
+Execute _framework/_prompts/generate-exercise.md. CONCEPT is "[Single Go Concept]"
 
-**Educational Review (cs-professor)**:
-```
-"Restructure any sections with poor learning progression in /path/to/chapter.md and create bridge content for concept gaps you identify by editing and expanding the file."
-```
+# Generate appendix with inverse-prompting
+Execute _framework/_prompts/generate-appendix.md
 
-**Content Polish (academic-editor)**:
-```
-"Fix formatting inconsistencies and improve readability in these files by editing them directly: [list]. Ensure consistent heading styles, proper spacing, and professional presentation."
+# Review Go content for AECS compliance
+Execute _framework/_prompts/review-content.md. CONTENT_TYPE is "go programming content"
 ```
 
-### Automatic Delegation vs Explicit Control
+### Go Code Validation
+```bash
+# Ensure all Go code compiles
+find stages -name "*.md" -exec grep -l "```go" {} \; | xargs -I {} sh -c 'echo "Checking Go code in: {}"'
 
-**Automatic**: Claude Code will automatically use subagents for domain-specific tasks
-**Explicit**: Use explicit invocation when you need specific changes made
+# Validate Go formatting
+go fmt ./...
 
-### Chaining Sub Agents with Actions
-
-For complex workflows, chain agents with specific deliverables:
-
+# Run Go static analysis  
+go vet ./...
 ```
-"First, have cs-professor improve the learning flow in networking-chapter.md by restructuring the content. Then have go-engineer enhance the code examples by editing them directly. Finally, have academic-editor polish the formatting across all changed files."
-```
 
-## Project Guidelines
+## Quality Assurance
 
-### For New Chapters
+### Go-Specific Checklist
 
-1. Outline learning objectives and prerequisites
-2. Generate initial content with focus on your expertise
-3. Let sub agents handle their specialized areas
-4. Review and integrate all feedback
+Before considering Go content complete:
 
-### For Code Examples
+- [ ] **AECS Compliance**: Enforces all four AECS principles
+- [ ] **Go Compilation**: All code examples compile successfully
+- [ ] **Go Standards**: Follows official Go style and conventions
+- [ ] **Error Handling**: Includes appropriate error handling patterns
+- [ ] **Practical Results**: Produces observable, testable outcomes
+- [ ] **Progressive Building**: Uses only previously mastered Go concepts
+- [ ] **Real-World Context**: Demonstrates practical Go usage scenarios
 
-- Prioritize clarity for learning
-- Include error handling  
-- Show idiomatic Go patterns
-- Add benchmarks for performance topics
+### Exercise Validation Process
 
-### For Exercises
+For each Go Exercise:
 
-- Start simple, increase complexity
-- Provide clear success criteria
-- Include common mistakes to avoid
-- Offer extension challenges
+1. **Technical Review**: go-engineer verifies Go code quality and best practices
+2. **Learning Review**: cs-professor validates Exercise-driven progression  
+3. **Structure Review**: academic-editor ensures AECS compliance
+4. **Integration Testing**: Verify Exercise fits properly in Stage progression
 
-## Quality Checklist
+## Project-Specific Notes
 
-Before considering content complete:
+### Go Version Compatibility
+- Target Go 1.24+ features and syntax
+- Include version-specific notes where relevant
+- Ensure backward compatibility considerations are addressed
 
-- [ ] Code reviewed by go-engineer
-- [ ] Pedagogy validated by cs-professor  
-- [ ] Structure polished by academic-editor
-- [ ] All examples compile and run
-- [ ] Learning objectives are clear
-- [ ] Formatting is consistent
-- [ ] Cross-references are accurate
+### Learning Path Focus
+- Emphasize practical Go programming over theoretical concepts
+- Include real-world scenarios and professional development patterns
+- Build towards production-ready Go applications
 
-## Tips for Effective Sub Agent Use
+### Exercise Outcomes
+By completing this Path, learners will have built:
+- Working Go applications demonstrating core language features
+- Concurrent programs using goroutines and channels
+- Web services and HTTP applications
+- Database-integrated applications
+- Tested, production-ready Go systems
 
-1. **Let them work independently** - Sub agents have their own context, so provide complete information
-2. **Be specific** - Clear requests get better results
-3. **Trust automatic delegation** - Claude Code is good at choosing the right agent
-4. **Iterate as needed** - Sub agents can refine their own previous work
+## Success Metrics
 
-Remember: The goal is creating the best possible Go learning resource. Use sub agents proactively to ensure technical accuracy, pedagogical effectiveness, and professional presentation.
+**Go Programming Path Success Achieved When**:
+- Every Exercise requires writing working Go code
+- No theoretical Go content exists without hands-on implementation
+- Each Exercise demonstrates exactly one Go concept practically
+- Progression follows proper Go learning dependencies
+- Learners build increasingly complex Go applications
+- Final outcomes include production-ready Go systems
+
+**Remember**: This is an Exercise-driven Go programming learning experience. Every interaction must center on building working Go code that demonstrates practical mastery through hands-on implementation.

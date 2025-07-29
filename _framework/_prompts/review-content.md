@@ -4,7 +4,7 @@
 Conduct comprehensive review of curriculum documents using specialized subagents to ensure technical accuracy, pedagogical effectiveness, and structural consistency. Supports both single document and multi-document review workflows.
 
 ## Parameters
-- **CONTENT_TYPE**: Type of content being reviewed (e.g., "curriculum", "chapter", "exercise", "appendix", "workflow documentation")
+- **CONTENT_TYPE**: Type of content being reviewed (e.g., "path", "stage", "exercise", "appendix", "workflow documentation")
 - **DOCUMENT_PATHS**: List of documents to review (single or multiple)
 - **REVIEW_FOCUS**: Specific aspects to emphasize (e.g., "technical accuracy", "learning progression", "structural consistency")
 - **CONTEXT**: Additional context about the content's role in the overall curriculum
@@ -25,7 +25,7 @@ Based on content analysis, automatically engage appropriate subagents:
 **For Technical Content (exercises, code examples, implementations):**
 - **Domain Expert** (e.g., go-engineer, database-engineer): Technical accuracy, best practices, production readiness
 
-**For Educational Content (curricula, chapters, learning materials):**
+**For Educational Content (paths, stages, learning materials):**
 - **CS Professor**: Learning progression, concept scaffolding, assessment validity
 
 **For All Content:**
@@ -86,7 +86,7 @@ Generate comprehensive review report that includes:
 - Cognitive load appropriateness
 
 **Structural and Presentation Quality:**
-- AECS methodology compliance
+- AECS methodology compliance (Subject→Path→Stage→Concept→Exercise + Appendix parallel)
 - Template adherence
 - Formatting consistency
 - Professional presentation standards
@@ -148,14 +148,14 @@ The review process should:
 
 ## Example Usage
 
-**Action-Oriented Curriculum Review:**
+**Action-Oriented Path Review:**
 ```
-Execute review-content.md. CONTENT_TYPE is "complete curriculum". DOCUMENT_PATHS is "curriculum.md, chapters/00-foundations/go-foundations.md, chapters/01-concurrency/01-basic-goroutines.md". REVIEW_FOCUS is "technical fixes and learning progression improvements". CONTEXT is "Use subagents to make actual edits and improvements, not just provide analysis".
+Execute _framework/_prompts/review-content.md. CONTENT_TYPE is "complete path". DOCUMENT_PATHS is "PATH.md, stages/01-fundamentals/stage.md, stages/02-[topic]/01-[concept].md". REVIEW_FOCUS is "technical fixes and learning progression improvements". CONTEXT is "Use subagents to make actual edits and improvements, not just provide analysis".
 ```
 
-**Chapter Improvement with Specific Actions:**
+**Stage Improvement with Specific Actions:**
 ```
-Execute review-content.md. CONTENT_TYPE is "chapter with exercises". DOCUMENT_PATHS is "chapters/01-concurrency/roadmap.md, chapters/01-concurrency/01-basic-goroutines.md". REVIEW_FOCUS is "fix code issues and restructure poor learning flow". CONTEXT is "Each subagent should use editing tools to make concrete improvements to files".
+Execute _framework/_prompts/review-content.md. CONTENT_TYPE is "stage with exercises". DOCUMENT_PATHS is "stages/##-[stage]/stage.md, stages/##-[stage]/##-[exercise].md". REVIEW_FOCUS is "fix code issues and restructure poor learning flow". CONTEXT is "Each subagent should use editing tools to make concrete improvements to files".
 ```
 
 **Important**: This prompt will engage subagents to make actual changes to files, not just provide assessment reports. Always specify what improvements each subagent should make to the content.
