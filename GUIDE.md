@@ -1,5 +1,15 @@
 # Guide
 
+## Initialization
+
+To create a new training plan, run the following in plan mode:
+
+```
+Prompt: _frameworks/prompts/create-path.md
+Subject: [whatever you are interested in learning]
+Ultrathink.
+```
+
 ## Prompt Execution
 
 You will get the best results by executing the prompts in the following format in plan mode:
