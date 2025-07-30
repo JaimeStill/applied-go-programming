@@ -11,15 +11,58 @@
 3. **Applied Understanding**: Learning occurs through building working examples with tangible results
 4. **Progressive Complexity**: Concepts build incrementally through mastered dependency chains
 
+## Exercise Isolation Requirement
+
+**MANDATORY**: Every Exercise must be completely standalone and self-contained:
+- Each Exercise starts with complete setup from scratch
+- No references to previous Exercise implementations
+- No assumptions about existing files or code
+- Complete import statements and boilerplate in every Exercise
+- Concepts may depend on prior concepts, but Exercise implementations must not depend on prior Exercise code
+
+**Critical Distinction**:
+- ✓ **Concept Dependencies**: "This exercise assumes familiarity with functions and variables"
+- ✗ **Exercise Dependencies**: "Continue from the code you wrote in Exercise 2"
+- ✓ **Self-Contained**: "Create a new file main.go with the following structure"
+- ✗ **Cross-Reference**: "Modify the main.go file from the previous exercise"
+
+## Complete Step-by-Step Implementation Requirement
+
+**MANDATORY**: Every Exercise must provide complete, actionable examples at every step:
+- Exercises must never contain placeholders, TODO comments, or incomplete examples
+- Each step must provide complete, actionable examples (domain-appropriate)
+- No "Requirements" lists - only executable/actionable examples
+- Learners should learn by following complete examples, not by filling gaps
+- Examples must produce tangible results in the domain context
+- Brief explanations only when essential to understanding the current step
+
+**Domain-Agnostic Complete Examples**:
+- ✓ **Programming**: Complete code that compiles and runs
+- ✓ **System Administration**: Complete command sequences that work
+- ✓ **Creative Arts**: Complete procedures that produce visible results
+- ✓ **Research**: Complete methodologies with specific actionable steps
+- ✓ **Physical Skills**: Complete action sequences with observable outcomes
+
+**Prohibited Elements**:
+- ✗ TODO comments or placeholders
+- ✗ "Your Task" or "Requirements" sections
+- ✗ Incomplete examples requiring external research
+- ✗ Steps that require learners to guess implementation details
+
 ## Content Structure
 
 **Required Hierarchy**: Subject → Path → Stage → Concept → Exercise (+ Appendix parallel)
 
 ## Subagent Engagement Protocol
 
-**CRITICAL**: Use Claude's built-in subagent feature by referencing subagents defined in `.claude/agents/`. Do NOT use the Task tool to simulate subagents.
+**CRITICAL**: Use standardized subagents with direct user invocation. All learning paths use identical subagent names to eliminate recursive spawning issues.
 
-**Discovery Phase**: Examine `.claude/agents/` directory to identify available project subagents and match to required expertise roles.
+**Standardized Subagents**: Every project contains these three subagents generated from subject-agnostic templates:
+- **@agent-technical-expert**: Subject-specific technical implementation validation
+- **@agent-learning-designer**: AECS pedagogy and learning progression validation  
+- **@agent-content-editor**: AECS vocabulary and structure compliance validation
+
+**IMPORTANT**: Subagent activation requires direct user invocation using `@agent-[name]` syntax. Do NOT use the Task tool for subagent engagement as it causes recursive spawning and session timeouts.
 
 ### Subagent Review Framework
 
@@ -32,49 +75,53 @@
 
 ### Scoped Review Patterns
 
-**Technical Review Template**:
-```
-"You are reviewing a [ARTIFACT_TYPE] document. This artifact should maintain [ABSTRACTION_LEVEL] without [PROHIBITED_ELEMENTS].
+**User-Directed Subagent Engagement**:
 
-Review scope: Identify violations where [SPECIFIC_CRITERIA]. 
+Since direct user invocation is required to prevent recursive spawning, framework prompts should instruct users to engage subagents using these exact patterns:
+
+**Technical Expert Review**:
+```
+@agent-technical-expert You are reviewing an [ARTIFACT_TYPE] document. This artifact should demonstrate [SUBJECT] best practices through hands-on implementation.
+
+Review scope: Identify code that doesn't produce tangible, testable results or violates single-concept focus.
 
 Your feedback should:
-- List specific violations with line references
-- Suggest conceptual fixes that maintain document format
-- NOT include implementation code or detailed examples
-- Focus only on [DOMAIN_EXPERTISE] aspects
+- Assess technical implementation quality
+- Verify single-concept demonstration
+- Suggest specific improvements for hands-on building
+- Focus only on [SUBJECT] technical aspects
 
-Format your response as: Issue → Conceptual Fix (no code)"
+Format your response as: Assessment → Recommendations
 ```
 
-**Learning Review Template**:
+**Learning Designer Review**:
 ```
-"You are reviewing a [ARTIFACT_TYPE] document that should enforce Exercise Primacy at [ABSTRACTION_LEVEL].
+@agent-learning-designer You are reviewing an [ARTIFACT_TYPE] document that should enforce Exercise Primacy through hands-on building.
 
 Review scope: Identify passive consumption elements and multi-concept violations.
 
 Your feedback should:
 - Identify specific AECS principle violations
-- Suggest structural reorganization approaches
-- NOT provide detailed content rewrites
+- Suggest structural reorganization for immediate hands-on engagement
+- Verify single-concept atomicity and proper dependency chains
 - Focus on learning design principles
 
-Format your response as: Violation → Structural Fix (no content)"
+Format your response as: Violation → Structural Fix
 ```
 
-**Structure Review Template**:
+**Content Editor Review**:
 ```
-"You are reviewing a [ARTIFACT_TYPE] document for AECS vocabulary and hierarchy compliance.
+@agent-content-editor You are reviewing an [ARTIFACT_TYPE] document for AECS vocabulary and structure compliance.
 
 Review scope: AECS vocabulary usage and Subject→Path→Stage→Concept→Exercise hierarchy.
 
 Your feedback should:
 - Identify vocabulary deviations with specific examples
-- Suggest hierarchy corrections
-- NOT rewrite content sections
-- Focus only on structural compliance
+- Suggest structure corrections for Exercise-driven format
+- Ensure all sections center on doing rather than consuming
+- Focus only on structural and vocabulary compliance
 
-Format your response as: Deviation → Vocabulary/Structure Fix (no rewrites)"
+Format your response as: Issue → Correction
 ```
 
 ### Feedback Validation Protocol
@@ -144,7 +191,7 @@ Format your response as: Deviation → Vocabulary/Structure Fix (no rewrites)"
 
 ### Path Document Format Requirements
 
-**Abstraction Level**: Stage progression overview with learning outcomes
+**Abstraction Level**: Stage progression overview with building outcomes
 **Required Sections**: Path metadata, stage progression, prerequisites, outcomes
 **Prohibited Elements**:
 - Individual exercise details
@@ -170,10 +217,11 @@ Before finalizing any artifact, verify:
 - [ ] Appropriate abstraction level maintained throughout
 
 **Exercise Documents**:
-- [ ] Complete implementation guidance provided
-- [ ] Working code examples included
+- [ ] Complete step-by-step examples provided (no placeholders)
+- [ ] Working examples that produce tangible results
 - [ ] Single concept focus maintained
-- [ ] Hands-on building required throughout
+- [ ] No "Requirements" lists or "Your Task" sections
+- [ ] Each step provides complete, actionable examples
 
 **Path Documents**:
 - [ ] Stage-level progression only
@@ -231,7 +279,7 @@ Format your response as: [REQUIRED_FORMAT]"
 1. **Immediately reject** the response
 2. **Re-prompt** with enhanced constraints
 3. **Explicitly state** what was inappropriate in previous response
-4. **Require confirmation** of understanding before proceeding
+4. **Require confirmation** of compliance before proceeding
 
 ## Quality Validation
 
@@ -239,7 +287,7 @@ Before completion, verify: Exercise Primacy (hands-on building), Concept Atomici
 
 ## Framework Usage
 
-Execute prompts using: `Execute _framework/_prompts/[prompt-name].md. PARAMETER is "[value]".`
+Execute prompts using: `Execute _framework/prompts/[prompt-name].md. PARAMETER is "[value]".`
 
 - **create-**: Initialize from scratch without infrastructure assumptions
 - **generate-**: Derive from existing project infrastructure

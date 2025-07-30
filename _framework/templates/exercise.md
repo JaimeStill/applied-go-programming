@@ -13,42 +13,40 @@
 
 **Tangible Result**: {{OBSERVABLE_RESULT}}
 
-## Dependencies Verification
+## Concept Prerequisites
 
-This Exercise uses only these previously mastered Concepts:
+This Exercise demonstrates {{CONCEPT}} which assumes familiarity with:
 {{#each PREREQUISITE_CONCEPTS}}
-- {{this}} (mastered through hands-on implementation in previous Exercises)
+- {{this}}
 {{/each}}
+
+**Starting Point**: This exercise provides all necessary code from scratch. No prior exercise code is required.
 
 ## Practical Implementation
 
 ### Step 1: Initial Setup
 
-```{{LANGUAGE}}
-{{SETUP_CODE}}
-```
-
-**Build this code and verify it compiles:**
-```bash
-{{COMPILE_COMMAND}}
-```
-
-### Step 2: Core Implementation
-
-**Your Task**: Build the working implementation that demonstrates {{CONCEPT}}.
+Create the foundational structure for this exercise:
 
 ```{{LANGUAGE}}
-{{IMPLEMENTATION_TEMPLATE}}
+{{COMPLETE_SETUP_CODE}}
 ```
 
-**Requirements**:
-{{#each IMPLEMENTATION_REQUIREMENTS}}
-- {{this}}
-{{/each}}
+{{SETUP_EXPLANATION}}
+
+### Step 2: Complete Implementation
+
+Follow these steps to demonstrate {{CONCEPT}}:
+
+```{{LANGUAGE}}
+{{COMPLETE_IMPLEMENTATION_CODE}}
+```
+
+{{IMPLEMENTATION_EXPLANATION}}
 
 ### Step 3: Verification
 
-**Test your implementation:**
+Execute your implementation to verify it works:
 
 ```{{LANGUAGE}}
 {{VERIFICATION_CODE}}
@@ -58,6 +56,8 @@ This Exercise uses only these previously mastered Concepts:
 ```
 {{EXPECTED_OUTPUT}}
 ```
+
+{{VERIFICATION_EXPLANATION}}
 
 ## Success Criteria
 
@@ -114,11 +114,10 @@ Your implementation is complete when:
 
 </details>
 
-## Next Exercise
+## Concept Progression
 
-**Progressive Complexity**: This Exercise demonstrates {{CONCEPT}}, which enables the next Concept: **{{NEXT_CONCEPT}}** to be demonstrated through its Exercise.
-
-**Next Building Task**: {{NEXT_EXERCISE_DESCRIPTION}}
+**Concept Demonstrated**: {{CONCEPT}}
+**Next Concept in Path**: {{NEXT_CONCEPT}}
 
 ---
 

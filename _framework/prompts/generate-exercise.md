@@ -12,7 +12,7 @@ Create a comprehensive, hands-on Exercise following the Agentic Exercise Curricu
 **CRITICAL**: This prompt MUST enforce all four AECS principles:
 
 ### Exercise Primacy Enforcement
-- Exercise MUST center on hands-on building, not theoretical understanding
+- Exercise MUST center on hands-on building, not theoretical implementation
 - NO passive consumption elements (explanations without immediate implementation)
 - ALL learning MUST occur through immediate practical building
 - Every section MUST require active implementation rather than reading
@@ -31,13 +31,28 @@ Create a comprehensive, hands-on Exercise following the Agentic Exercise Curricu
 
 ### Progressive Complexity Verification
 - Exercise MUST build only on previously mastered Concepts through practical implementation
-- Implementation MUST use only concepts learned through hands-on building in prior Exercises
+- Implementation MUST use only prerequisite concepts (not prior exercise implementations)
 - NO learning jumps that skip prerequisite practical mastery
 - Dependency chain MUST be clearly validated
 
+### Exercise Isolation Requirement
+
+**CRITICAL**: Each exercise MUST be completely self-contained:
+- Start from scratch with all necessary setup
+- Provide complete working environment
+- Never reference code from other exercises
+- Never assume existing files or infrastructure from prior exercises
+- Include all imports, setup, and boilerplate needed
+
+**Concept Dependencies vs Exercise Dependencies**:
+- ✓ Concepts build on previously learned concepts
+- ✗ Exercises do NOT reference previous exercise implementations
+- ✓ Each exercise creates its own isolated environment
+- ✗ No "continue from previous exercise" instructions
+
 ## Execution Instructions
 
-Use the exercise template at `_framework/_templates/exercise.md` to generate a complete, AECS-compliant Exercise.
+Use the exercise template at `_framework/templates/exercise.md` to generate a complete, AECS-compliant Exercise.
 
 ### Step 1: Context Derivation and Analysis
 Before generating content, derive context from existing infrastructure:
@@ -75,9 +90,9 @@ Fill the template with:
 - Clear prerequisite mapping
 - Proper categorization within curriculum
 
-**Learning Objectives:**
+**Building Objectives:**
 - Specific, measurable outcomes using action verbs
-- Mix of conceptual understanding and practical skills
+- Mix of conceptual implementation and practical skills
 - Testable objectives that can be verified
 
 **Overview and Relevance:**
@@ -92,10 +107,10 @@ Fill the template with:
 - Clear, educational comments explaining key concepts
 
 **Practical Implementation Focus:**
-- Immediate hands-on building requirements
-- Working code that demonstrates the concept through implementation
+- Complete examples at each step
+- Working implementations that demonstrate the concept
 - Tangible results that can be observed and verified
-- Step-by-step building instructions for the concept
+- Sequential complete examples that build incrementally
 
 **Task Implementation:**
 - Three progressive difficulty levels with clear requirements
@@ -135,21 +150,66 @@ Fill the template with:
 
 ### Step 5: MANDATORY AECS-Constrained Expert Review
 
-**REQUIRED**: After generating the Exercise content, engage project subagents to review and refine for AECS compliance. Subagents provide feedback only - they do NOT create new artifacts.
+**REQUIRED**: After generating the Exercise content, request user to engage standardized subagents for AECS compliance review. Due to Claude Code's recursive spawning issue with Task tool subagent invocation, subagent engagement requires direct user invocation.
 
-### Subagent Review Process
+### User-Directed Subagent Review Process
 
-**Step 5.1**: Identify available subagents in `.claude/agents/` directory.
+**Step 5.1**: Request user to engage standardized subagents using direct invocation syntax.
 
-**Step 5.2**: Engage each subagent to review the generated Exercise content:
+**Step 5.2**: Provide exact prompts for user to copy and execute:
 
-**Technical Implementation Review**: Request the technical/engineering subagent to "review this Exercise content and identify any code that doesn't produce tangible, testable results. Suggest specific fixes to ensure the implementation demonstrates hands-on building with single-concept focus. Verify all code uses only previously mastered concepts."
+**Technical Expert Review**: Request user to invoke:
+```
+@agent-technical-expert You are reviewing an EXERCISE document. This exercise should demonstrate [SUBJECT] best practices through hands-on implementation.
 
-**Learning Design Review**: Ask the pedagogical/educational subagent to "review this Exercise for Exercise Primacy violations. Identify any passive consumption elements and suggest how to restructure for immediate hands-on engagement. Verify single-concept atomicity and proper dependency chains."
+Review scope: Identify code that doesn't produce tangible, testable results or violates single-concept focus.
 
-**Content Structure Review**: Have the academic editing/writing subagent to "review this Exercise for AECS vocabulary and structure violations. Identify deviations from Subject→Path→Stage→Concept→Exercise hierarchy and suggest fixes to ensure all sections center on doing rather than consuming."
+Your feedback should:
+- Assess technical implementation quality  
+- Verify single-concept demonstration
+- Suggest specific improvements for hands-on building
+- Focus only on [SUBJECT] technical aspects
 
-**Step 5.3**: Incorporate subagent feedback into the final Exercise document, ensuring all AECS principles are enforced.
+Format your response as: Assessment → Recommendations
+
+[EXERCISE_CONTENT_HERE]
+```
+
+**Learning Designer Review**: Request user to invoke:
+```
+@agent-learning-designer You are reviewing an EXERCISE document that should enforce Exercise Primacy through hands-on building.
+
+Review scope: Identify passive consumption elements and multi-concept violations.
+
+Your feedback should:
+- Identify specific AECS principle violations
+- Suggest structural reorganization for immediate hands-on engagement  
+- Verify single-concept atomicity and proper dependency chains
+- Focus on learning design principles
+
+Format your response as: Violation → Structural Fix
+
+[EXERCISE_CONTENT_HERE]
+```
+
+**Content Editor Review**: Request user to invoke:
+```
+@agent-content-editor You are reviewing an EXERCISE document for AECS vocabulary and structure compliance.
+
+Review scope: AECS vocabulary usage and Subject→Path→Stage→Concept→Exercise hierarchy.
+
+Your feedback should:
+- Identify vocabulary deviations with specific examples
+- Suggest structure corrections for Exercise-driven format
+- Ensure all sections center on doing rather than consuming
+- Focus only on structural and vocabulary compliance
+
+Format your response as: Issue → Correction
+
+[EXERCISE_CONTENT_HERE]
+```
+
+**Step 5.3**: After receiving subagent feedback from user, incorporate recommendations into the final Exercise document, ensuring all AECS principles are enforced.
 
 ### Step 6: AECS Principle Verification
 Ensure the Exercise:
@@ -162,7 +222,7 @@ Ensure the Exercise:
 ## Output Requirements
 
 Generate a complete exercise document that includes:
-1. Comprehensive metadata and learning objectives
+1. Comprehensive metadata and building objectives
 2. Clear conceptual foundation and mental models
 3. Progressive three-part implementation tasks
 4. Production-quality code examples and solutions
@@ -191,13 +251,13 @@ The generated exercise should:
 - Provide clear, educational comments
 
 ### Learning Progression
-- Build incrementally on previous exercises
+- Build incrementally on prerequisite concepts
 - Introduce a manageable number of new concepts per exercise to avoid cognitive overload
 - Provide multiple practice opportunities for complex concepts
 - Include conceptual bridges to future topics
 
 ### Assessment Integration
-- Include measurable learning objectives
+- Include measurable building objectives
 - Provide clear success criteria for each task level
 - Offer self-assessment opportunities
 - Enable both formative and summative evaluation
@@ -217,7 +277,7 @@ Generated Exercises should be saved as:
 ## Example Usage
 
 ```
-Execute _framework/_prompts/generate-exercise.md. CONCEPT is "[Single Atomic Concept]".
+Execute _framework/prompts/generate-exercise.md. CONCEPT is "[Single Atomic Concept]".
 ```
 
 This will generate a complete AECS-compliant Exercise with intelligent context derivation, ensuring all four AECS principles are enforced throughout.

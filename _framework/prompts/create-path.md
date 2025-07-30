@@ -19,20 +19,26 @@ Bootstrap a complete AECS project from scratch for any technical Subject. This i
 - **.claude/agents/**: Auto-generate domain-specific AECS-constrained subagents
 - **Project files**: Create CLAUDE.md, README.md with project-specific guidance
 
-### Auto-Generate Domain Subagents
-Based on the SUBJECT, automatically create appropriate AECS-constrained subagents using `_framework/_prompts/create-subagent.md`:
+### Auto-Generate Standardized Subagents
+Automatically create the three standardized AECS-constrained subagents using `_framework/prompts/generate-subagents.md`:
 
-**Typical Subagent Profiles**:
-- **Domain Expert**: Technical implementation specialist (e.g., "go-engineer", "rust-engineer")
-- **CS Professor**: Exercise-driven learning pedagogy expert
-- **Academic Editor**: AECS structure and content quality expert
+**Required Standardized Subagents**:
+- **technical-expert**: Subject-specific technical implementation validation
+- **learning-designer**: AECS pedagogy and learning progression validation
+- **content-editor**: AECS vocabulary and structure compliance validation
 
-**Auto-Generation Logic**:
-1. Analyze SUBJECT to determine technical domain
-2. Generate domain-specific technical expert agent
-3. Generate standard cs-professor agent with domain context
-4. Generate academic-editor agent with domain awareness
-5. Save all agents to `.claude/agents/` directory
+**Auto-Generation Process**:
+1. Execute: `_framework/prompts/generate-subagents.md. SUBJECT is "[SUBJECT]".`
+2. Templates from `_framework/templates/agents/` are processed with [SUBJECT] parameter
+3. Three standardized subagents created in `.claude/agents/` directory
+4. Eliminates recursive spawning through predictable naming and direct user invocation
+
+**Benefits of Standardized Approach**:
+- **Eliminates Recursive Spawning**: Predictable subagent names prevent Task tool issues
+- **Framework Consistency**: All learning paths use identical subagent references  
+- **Subject Flexibility**: Templates adapt to any domain through parameterization
+- **Direct User Invocation**: Subagents work via `@agent-[name]` syntax without nesting
+- **Session Independence**: Subagents must exist at session start to be recognized
 
 ## AECS Compliance Requirements
 
@@ -93,7 +99,7 @@ Create complete project directory structure:
 ```
 
 ### Step 3: AECS-Compliant Content Generation
-Using the path template at `_framework/_templates/path.md`, generate:
+Using the path template at `_framework/templates/path.md`, generate:
 
 **Exercise-Driven Learning Path**:
 - Clear description of what learners will BUILD (not learn theoretically)
@@ -138,7 +144,7 @@ Create project-specific files:
 
 ### Domain Expert Generation
 ```
-Execute _framework/_prompts/create-subagent.md. 
+Execute _framework/prompts/create-subagent.md. 
 DOMAIN is "[SUBJECT domain]". 
 ROLE is "AECS-Constrained [Domain] Implementation Expert". 
 EXPERIENCE_LEVEL is "Senior [Domain] Engineer with 10+ years and Exercise-driven methodology expertise". 
@@ -147,16 +153,16 @@ FOCUS_AREAS is "[domain-specific technical areas] through hands-on building, pra
 
 ### CS Professor Generation
 ```
-Execute _framework/_prompts/create-subagent.md. 
+Execute _framework/prompts/create-subagent.md. 
 DOMAIN is "Computer Science Education". 
 ROLE is "AECS-Constrained Exercise-Driven Learning Expert". 
 EXPERIENCE_LEVEL is "PhD in CS Education with 15+ years specializing in Exercise Primacy methodology". 
-FOCUS_AREAS is "Exercise-driven concept scaffolding in [SUBJECT], hands-on assessment design, practical learning objectives, preventing passive consumption misconceptions in [SUBJECT] learning".
+FOCUS_AREAS is "Exercise-driven concept scaffolding in [SUBJECT], hands-on assessment design, practical building objectives, preventing passive consumption misconceptions in [SUBJECT] learning".
 ```
 
 ### Academic Editor Generation
 ```
-Execute _framework/_prompts/create-subagent.md. 
+Execute _framework/prompts/create-subagent.md. 
 DOMAIN is "Technical Writing and AECS Structure". 
 ROLE is "AECS-Constrained Content Structure Expert". 
 EXPERIENCE_LEVEL is "Senior Technical Editor with 15+ years and AECS methodology expertise". 
@@ -210,7 +216,9 @@ The created project MUST:
 - Multi-concept Exercises violating atomicity
 - Passive consumption elements (readings, videos, explanations)
 - Academic assessment patterns (quizzes, tests, evaluations)
-- Learning objectives focused on "understanding" rather than "building"
+- Building objectives focused on "understanding" rather than "implementing"
+- TODO comments, placeholders, or incomplete examples in Exercise planning
+- "Requirements" lists or "Your Task" sections instead of complete step-by-step examples
 
 **Required Elements**:
 - Complete project structure initialization
@@ -223,7 +231,7 @@ The created project MUST:
 ## Example Usage
 
 ```
-Execute _framework/_prompts/create-path.md. SUBJECT is "[Any Technical Subject]". TARGET_AUDIENCE is "[target learner profile]". DIFFICULTY_PROGRESSION is "Fundamentals to [Mastery Level]".
+Execute _framework/prompts/create-path.md. SUBJECT is "[Any Technical Subject]". TARGET_AUDIENCE is "[target learner profile]". DIFFICULTY_PROGRESSION is "Fundamentals to [Mastery Level]".
 ```
 
 This will bootstrap a complete AECS project with auto-generated subagents, full directory structure, PATH.md, initial fundamentals stage, and all supporting documentation ready for immediate Exercise-driven development.

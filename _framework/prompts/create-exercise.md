@@ -33,7 +33,7 @@ Add new concept Exercise to existing Stage with automatic stage.md updates.
 **CRITICAL**: This prompt MUST enforce all four AECS principles:
 
 ### Exercise Primacy Enforcement
-- Exercise MUST center on hands-on building, not theoretical understanding
+- Exercise MUST center on hands-on building, not theoretical implementation
 - NO passive consumption elements (explanations without immediate implementation)
 - ALL learning MUST occur through immediate practical building
 - Every section MUST require active implementation rather than reading
@@ -52,9 +52,41 @@ Add new concept Exercise to existing Stage with automatic stage.md updates.
 
 ### Progressive Complexity Verification
 - Exercise MUST build only on previously mastered Concepts (for integration/enhancement)
-- Implementation MUST use only concepts learned through hands-on building in prior Exercises
+- Implementation MUST use only prerequisite concepts (not prior exercise implementations)
 - NO learning jumps that skip prerequisite practical mastery
 - Dependency chain MUST be clearly validated (except for standalone exercises)
+
+### Exercise Isolation Requirement
+
+**CRITICAL**: Each exercise MUST be completely self-contained:
+- Start from scratch with all necessary setup
+- Provide complete working environment
+- Never reference code from other exercises
+- Never assume existing files or infrastructure
+- Include all imports, setup, and boilerplate needed
+
+**Concept Dependencies vs Exercise Dependencies**:
+- ✓ Concepts build on previously learned concepts
+- ✗ Exercises do NOT reference previous exercise implementations
+- ✓ Each exercise creates its own isolated environment
+- ✗ No "continue from previous exercise" instructions
+
+### Complete Step-by-Step Implementation Requirement
+
+**CRITICAL**: Each exercise MUST provide complete, actionable examples at every step:
+- NO placeholders, TODO comments, or incomplete examples
+- NO "Requirements" lists or "Your Task" sections
+- Each step provides complete, executable/actionable examples
+- Learners follow complete examples rather than filling in blanks
+- Brief explanations only when essential to understanding the current step
+- Examples must produce tangible results in the domain context
+
+**Domain-Agnostic Complete Examples**:
+- **Programming**: Complete code that compiles and runs
+- **System Administration**: Complete command sequences that work
+- **Creative Arts**: Complete procedures that produce visible results
+- **Research**: Complete methodologies with specific actionable steps
+- **Physical Skills**: Complete action sequences with observable outcomes
 
 ## Execution Instructions
 
@@ -126,13 +158,13 @@ Should I use my suggested placement or do you have a preference?"
 5. **User Confirmation**: Use inverse-prompting for ambiguous cases
 
 ### Step 4: AECS-Compliant Exercise Generation
-Using the exercise template at `_framework/_templates/exercise.md`, create:
+Using the exercise template at `_framework/templates/exercise.md`, create:
 
 **Single Concept Implementation**:
 - **Atomic Focus**: Address exactly one concept through practical building
-- **Working Implementation**: Implement concept through hands-on building
+- **Complete Examples**: Provide full working examples at each step
 - **Tangible Results**: Produce observable, testable outcomes
-- **Implementation Guidance**: Step-by-step building instructions
+- **Sequential Building**: Complete step-by-step examples that build incrementally
 
 **Dependency Management**:
 - **Prerequisite Analysis**: Extract dependencies from existing content (for integration/enhancement)
@@ -201,7 +233,7 @@ Proceeding with Exercise creation or need adjustments?"
 
 **Step 2**: Engage each subagent to review the created Exercise content:
 
-**Technical Implementation Review**: Request the technical/engineering subagent to "review this Exercise and validate that the concept can be implemented through practical building. Identify any code that won't work correctly and suggest fixes. Verify all examples use only previously mastered concepts."
+**Technical Implementation Review**: Request the technical/engineering subagent to "review this Exercise and validate that the concept can be implemented through practical building. Identify any code that won't work correctly and suggest fixes. Verify all examples are self-contained and use only prerequisite concepts (not prior exercise code)."
 
 **Learning Design Review**: Ask the pedagogical/educational subagent to "review this Exercise for Exercise Primacy compliance. Identify any passive consumption elements and suggest how to restructure for hands-on building. Validate single-concept atomicity and proper dependency chains."
 
@@ -238,7 +270,7 @@ The created Exercise MUST:
 - Theoretical content without immediate hands-on application
 - Passive consumption elements in Exercise structure
 - Academic assessment without practical building
-- Learning objectives focused on "understanding" rather than "building"
+- Building objectives focused on "understanding" rather than "implementing"
 
 **Required Elements**:
 - Single-concept focus with immediate practical building
@@ -251,22 +283,22 @@ The created Exercise MUST:
 
 **Standalone Exercise**:
 ```
-Execute _framework/_prompts/create-exercise.md. CONCEPT is "[Independent Concept]". SCENARIO is "standalone".
+Execute _framework/prompts/create-exercise.md. CONCEPT is "[Independent Concept]". SCENARIO is "standalone".
 ```
 
 **Enhancement Exercise**:
 ```
-Execute _framework/_prompts/create-exercise.md. CONCEPT is "[Concept Clarification]". SCENARIO is "enhancement". TARGET_LOCATION is "[related stage]".
+Execute _framework/prompts/create-exercise.md. CONCEPT is "[Concept Clarification]". SCENARIO is "enhancement". TARGET_LOCATION is "[related stage]".
 ```
 
 **Stage Integration**:
 ```
-Execute _framework/_prompts/create-exercise.md. CONCEPT is "[New Concept]". SCENARIO is "integration". TARGET_LOCATION is "[target stage]".
+Execute _framework/prompts/create-exercise.md. CONCEPT is "[New Concept]". SCENARIO is "integration". TARGET_LOCATION is "[target stage]".
 ```
 
 **With Inverse-Prompting**:
 ```
-Execute _framework/_prompts/create-exercise.md. CONCEPT is "[Any Concept]".
+Execute _framework/prompts/create-exercise.md. CONCEPT is "[Any Concept]".
 ```
 (Will use inverse-prompting to determine scenario and placement)
 

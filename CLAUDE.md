@@ -1,5 +1,13 @@
 # Applied Go Programming - Project Implementation Guide
 
+# MANDATORY INITIALIZATION CHECKLIST
+When executing ANY task in this repository:
+1. ✓ Read and internalize _framework/CLAUDE.md 
+2. ✓ Follow AECS principles in ALL interactions
+3. ✓ Engage subagents for validation on ALL artifacts
+4. ✓ Verify exercises are self-contained
+5. ✓ Follow all Go-specific requirements below
+
 ## AECS Framework Compliance
 
 **Primary Directive**: Follow the Agentic Exercise Curriculum System (AECS) methodology as defined in `_framework/CLAUDE.md`. All content development must enforce Exercise Primacy, Concept Atomicity, Applied Understanding, and Progressive Complexity.

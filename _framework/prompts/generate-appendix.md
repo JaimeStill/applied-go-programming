@@ -204,7 +204,7 @@ The generated appendix should:
 
 **Step 2**: Match subagents to required expertise roles and engage them by name:
 
-**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Verify all technical content is accurate, follows current best practices, and uses only concepts that learners have mastered through previous Exercises. Validate that any code examples or technical references are correct and align with the domain's standards."
+**Technical Implementation Expert**: Identify the technical/engineering subagent (e.g., domain-engineer, go-engineer) and engage using @[subagent-name]. Request: "Verify all technical content is accurate, follows current best practices, and uses only prerequisite concepts (not prior exercise implementations). Validate that any code examples or technical references are correct and align with the domain's standards."
 
 **Learning Design Expert**: Identify the pedagogical/educational subagent (e.g., cs-professor, learning-designer) and engage using @[subagent-name]. Request: "Ensure the appendix properly supports Exercise-driven learning without violating Exercise Primacy. Verify that content serves as quick reference parallel to Exercises rather than replacing hands-on building. Confirm the appendix enhances rather than substitutes for practical implementation."
 
@@ -213,16 +213,16 @@ The generated appendix should:
 ## Example Usage
 
 ```
-Execute _framework/_prompts/generate-appendix.md. APPENDIX_TYPE is "Quick Reference". TARGET_NEED is "rapid syntax lookup". SCOPE is "essential syntax and patterns". AUDIENCE_CONTEXT is "reference during Exercises". RELATED_STAGES is "supports all Stages as foundational reference".
+Execute _framework/prompts/generate-appendix.md. APPENDIX_TYPE is "Quick Reference". TARGET_NEED is "rapid syntax lookup". SCOPE is "essential syntax and patterns". AUDIENCE_CONTEXT is "reference during Exercises". RELATED_STAGES is "supports all Stages as foundational reference".
 ```
 
 ```
-Execute _framework/_prompts/generate-appendix.md. APPENDIX_TYPE is "Troubleshooting Guide". TARGET_NEED is "common error resolution". SCOPE is "frequent issues and solutions". AUDIENCE_CONTEXT is "problem-solving support". RELATED_STAGES is "advanced implementation stages".
+Execute _framework/prompts/generate-appendix.md. APPENDIX_TYPE is "Troubleshooting Guide". TARGET_NEED is "common error resolution". SCOPE is "frequent issues and solutions". AUDIENCE_CONTEXT is "problem-solving support". RELATED_STAGES is "advanced implementation stages".
 ```
 
 **With Inverse-Prompting (Recommended)**:
 ```
-Execute _framework/_prompts/generate-appendix.md.
+Execute _framework/prompts/generate-appendix.md.
 ```
 (Will use inverse-prompting to determine all parameters with intelligent suggestions)
 

@@ -57,7 +57,7 @@ Based on content analysis, automatically engage appropriate subagents:
 - Verify prerequisite chains are accurate and complete
 - Check that difficulty progression is appropriate
 - Ensure consistent use of terminology and conventions
-- Validate that learning objectives align across materials
+- Validate that building objectives align across materials
 
 **Link and Reference Verification:**
 - Confirm all internal references are accurate
@@ -101,7 +101,7 @@ Generate comprehensive review report that includes:
 
 For each identified issue, provide:
 1. **Specific Problem**: What exactly needs improvement
-2. **Impact Assessment**: How this affects learning outcomes
+2. **Impact Assessment**: How this affects building outcomes
 3. **Recommended Solution**: Concrete steps to address the issue
 4. **Priority Level**: Critical, important, or minor
 5. **Implementation Guidance**: How to make the recommended changes
@@ -150,12 +150,12 @@ The review process should:
 
 **Action-Oriented Path Review:**
 ```
-Execute _framework/_prompts/review-content.md. CONTENT_TYPE is "complete path". DOCUMENT_PATHS is "PATH.md, stages/01-fundamentals/stage.md, stages/02-[topic]/01-[concept].md". REVIEW_FOCUS is "technical fixes and learning progression improvements". CONTEXT is "Use subagents to make actual edits and improvements, not just provide analysis".
+Execute _framework/prompts/review-content.md. CONTENT_TYPE is "complete path". DOCUMENT_PATHS is "PATH.md, stages/01-fundamentals/stage.md, stages/02-[topic]/01-[concept].md". REVIEW_FOCUS is "technical fixes and learning progression improvements". CONTEXT is "Use subagents to make actual edits and improvements, not just provide analysis".
 ```
 
 **Stage Improvement with Specific Actions:**
 ```
-Execute _framework/_prompts/review-content.md. CONTENT_TYPE is "stage with exercises". DOCUMENT_PATHS is "stages/##-[stage]/stage.md, stages/##-[stage]/##-[exercise].md". REVIEW_FOCUS is "fix code issues and restructure poor learning flow". CONTEXT is "Each subagent should use editing tools to make concrete improvements to files".
+Execute _framework/prompts/review-content.md. CONTENT_TYPE is "stage with exercises". DOCUMENT_PATHS is "stages/##-[stage]/stage.md, stages/##-[stage]/##-[exercise].md". REVIEW_FOCUS is "fix code issues and restructure poor learning flow". CONTEXT is "Each subagent should use editing tools to make concrete improvements to files".
 ```
 
 **Important**: This prompt will engage subagents to make actual changes to files, not just provide assessment reports. Always specify what improvements each subagent should make to the content.

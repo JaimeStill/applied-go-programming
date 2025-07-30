@@ -77,8 +77,8 @@ Repository Structure:
 ├── _framework/              # AECS methodology and templates
 │   ├── README.md           # This documentation
 │   ├── CLAUDE.md           # AECS-specific Claude directives
-│   ├── _templates/         # AECS-compliant content templates
-│   └── _prompts/           # Exercise-first generation prompts
+│   ├── templates/         # AECS-compliant content templates
+│   └── prompts/           # Exercise-first generation prompts
 ├── PATH.md                 # Main Path document (Subject learning journey)
 ├── .claude/agents/         # AECS-constrained AI agent profiles
 └── stages/                 # Exercise-driven learning content
@@ -152,22 +152,22 @@ Execute [prompt-name].md. [PARAMETER] is [single-concept/stage/path].
 
 **Bootstrap a complete AECS project:**
 ```
-Execute _framework/_prompts/create-path.md. SUBJECT is "[Any Technical Subject]". TARGET_AUDIENCE is "[target learners]". DIFFICULTY_PROGRESSION is "Fundamentals to [Advanced Level]".
+Execute _framework/prompts/create-path.md. SUBJECT is "[Any Technical Subject]". TARGET_AUDIENCE is "[target learners]". DIFFICULTY_PROGRESSION is "Fundamentals to [Advanced Level]".
 ```
 
 **Create a Stage independently:**
 ```
-Execute _framework/_prompts/create-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[abstract concept description]".
+Execute _framework/prompts/create-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[abstract concept description]".
 ```
 
 **Create an Exercise flexibly:**
 ```
-Execute _framework/_prompts/create-exercise.md. CONCEPT is "[Single Atomic Concept]". SCENARIO is "[standalone/enhancement/integration]".
+Execute _framework/prompts/create-exercise.md. CONCEPT is "[Single Atomic Concept]". SCENARIO is "[standalone/enhancement/integration]".
 ```
 
 **Generate from existing infrastructure:**
 ```
-Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[concepts for implementation]".
+Execute _framework/prompts/generate-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[concepts for implementation]".
 ```
 
 ### Parameter Requirements

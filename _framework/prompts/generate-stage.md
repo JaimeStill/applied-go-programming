@@ -39,7 +39,7 @@ Create a detailed Stage with Exercise progression for any learning subject, foll
 
 ## Execution Instructions
 
-Use the stage template at `_framework/_templates/stage.md` to generate a comprehensive Stage with Exercise sequences.
+Use the stage template at `_framework/templates/stage.md` to generate a comprehensive Stage with Exercise sequences.
 
 ### Step 1: PATH.md Analysis and Context Extraction
 Before generating content, analyze existing infrastructure:
@@ -140,7 +140,9 @@ The generated Stage MUST demonstrate:
 - Multi-concept Exercises violating atomicity
 - Passive consumption elements (readings, summaries, explanations)
 - Academic assessment patterns (self-assessment, mastery checkpoints without practical building)
-- Learning objectives focused on "understanding" rather than "building"
+- Building objectives focused on "understanding" rather than "implementing"
+- TODO comments, placeholders, or incomplete examples in Exercise design
+- "Requirements" lists or "Your Task" sections instead of complete actionable examples
 
 **Required Elements:**
 - Exercise sequences requiring immediate practical implementation
@@ -159,7 +161,7 @@ Generated Stage documents should be saved as:
 
 <example>
 **Subject**: Digital Photography
-**Input**: Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "Camera Fundamentals". TARGET_CONCEPTS is "aperture control, shutter speed mastery, ISO sensitivity".
+**Input**: Execute _framework/prompts/generate-stage.md. STAGE_TITLE is "Camera Fundamentals". TARGET_CONCEPTS is "aperture control, shutter speed mastery, ISO sensitivity".
 
 **Expected Output**: Stage document with atomic Exercises like:
 - Exercise 1: Demonstrate aperture effects through hands-on shooting
@@ -170,5 +172,5 @@ Each Exercise produces tangible photo results demonstrating single concepts.
 </example>
 
 ```
-Execute _framework/_prompts/generate-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[abstract concept description]".
+Execute _framework/prompts/generate-stage.md. STAGE_TITLE is "[Stage Topic]". TARGET_CONCEPTS is "[abstract concept description]".
 ```

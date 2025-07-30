@@ -79,7 +79,7 @@ Transform abstract TARGET_CONCEPTS into atomic, implementable concepts:
 4. **Practical Focus**: Define hands-on building tasks for each concept
 
 ### Step 4: Stage Structure Generation
-Using the stage template at `_framework/_templates/stage.md`, create:
+Using the stage template at `_framework/templates/stage.md`, create:
 
 **Stage Organization**:
 - **stage.md**: Complete Stage structure with Exercise progression
@@ -92,7 +92,7 @@ Using the stage template at `_framework/_templates/stage.md`, create:
 - **Implementation Description**: What learners will BUILD
 - **Prerequisites**: Previously mastered concepts (from analysis)
 - **Tangible Result**: Observable outcome of the Exercise
-- **Building Task**: Specific hands-on implementation requirements
+- **Building Task**: Complete step-by-step examples with actionable implementation
 
 ### Step 5: Path Integration (if applicable)
 If existing PATH.md is present:
@@ -188,7 +188,9 @@ The created Stage MUST:
 - Multi-concept Exercise planning that violates atomicity
 - Passive consumption elements in Stage design
 - Academic assessment patterns in Exercise planning
-- Learning objectives focused on "understanding" rather than "building"
+- Building objectives focused on "understanding" rather than "implementing"
+- TODO comments, placeholders, or incomplete examples
+- "Requirements" lists or "Your Task" sections instead of complete examples
 
 **Required Elements**:
 - Exercise sequences requiring immediate practical building
@@ -201,17 +203,17 @@ The created Stage MUST:
 
 **With Existing Infrastructure**:
 ```
-Execute _framework/_prompts/create-stage.md. STAGE_TITLE is "Database Integration". TARGET_CONCEPTS is "database connections, query execution, data modeling, transaction handling". INSERTION_POINT is "after Web Programming stage".
+Execute _framework/prompts/create-stage.md. STAGE_TITLE is "Database Integration". TARGET_CONCEPTS is "database connections, query execution, data modeling, transaction handling". INSERTION_POINT is "after Web Programming stage".
 ```
 
 **Standalone Initialization**:
 ```
-Execute _framework/_prompts/create-stage.md. STAGE_TITLE is "Concurrency". TARGET_CONCEPTS is "parallel execution patterns, synchronization mechanisms, concurrent data structures".
+Execute _framework/prompts/create-stage.md. STAGE_TITLE is "Concurrency". TARGET_CONCEPTS is "parallel execution patterns, synchronization mechanisms, concurrent data structures".
 ```
 
 **With Inverse-Prompting**:
 ```
-Execute _framework/_prompts/create-stage.md. STAGE_TITLE is "Performance Optimization". TARGET_CONCEPTS is "profiling and optimization techniques".
+Execute _framework/prompts/create-stage.md. STAGE_TITLE is "Performance Optimization". TARGET_CONCEPTS is "profiling and optimization techniques".
 ```
 (Inverse-prompting will ask for placement and concept clarification)
 
