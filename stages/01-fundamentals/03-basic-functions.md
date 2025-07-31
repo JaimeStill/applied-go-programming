@@ -19,53 +19,25 @@ Functions in Go encapsulate reusable logic into named blocks of code. A basic fu
 
 Functions in Go use the syntax `func name(parameters) returnType` to define reusable code blocks that accept input and produce output.
 
-## Prerequisites
+## Foundation Requirements
 
-Prerequisites for mastering Basic Functions:
+This Exercise demonstrates Basic Functions which assumes familiarity with:
 - Basic program structure (package main, import, main function)
 - Variable declarations and types
 - Type conversions and basic operations
 
 **Starting Point**: This exercise provides all necessary code from scratch. No prior exercise code is required.
 
-## Practical Implementation
+## Build Calculator Program
 
-### Step 1: Initial Setup
+### Step 1: Create Function Definitions
 
-Create the foundational structure for this exercise:
-
-```go
-package main
-
-import (
-    "fmt"
-)
-
-// Calculator function definitions
-func add(a, b int) int      { return a + b }
-func subtract(a, b int) int { return a - b }
-func multiply(a, b int) int  { return a * b }
-func divide(a, b int) int    { return a / b }
-
-func main() {
-    // Test our calculator functions
-    fmt.Println("Calculator Functions Demo")
-    fmt.Println("========================")
-}
-```
-
-This establishes our program structure with the main package and fmt import for output operations.
-
-### Step 2: Complete Implementation
-
-Follow these steps to demonstrate Basic Functions:
+Create `calculator.go` with basic function structure:
 
 ```go
 package main
 
-import (
-    "fmt"
-)
+import "fmt"
 
 // add takes two integers and returns their sum
 func add(a int, b int) int {
@@ -86,6 +58,23 @@ func multiply(a int, b int) int {
 func divide(a int, b int) int {
     return a / b
 }
+
+func main() {
+    fmt.Println("Calculator Functions Demo")
+    fmt.Println("========================")
+}
+```
+
+### Step 2: Add Function Calls and Testing
+
+Add function calls to the main function:
+
+```go
+package main
+
+import "fmt"
+
+// Calculator function definitions (add, subtract, multiply, divide) from Step 1
 
 func main() {
     fmt.Println("Calculator Functions Demo")
@@ -115,15 +104,12 @@ func main() {
 }
 ```
 
-Each function demonstrates the basic pattern: accept parameters, perform an operation, return a result. The main function shows various ways to call these functions and use their return values.
+### Step 3: Execute and Verify
 
-### Step 3: Verification
-
-Execute your implementation to verify it works:
+Run your complete calculator:
 
 ```bash
-go build -o calculator main.go
-./calculator
+go run calculator.go
 ```
 
 **Expected Output**:
@@ -141,19 +127,15 @@ More calculations:
 (4 * 5) + (10 - 3) = 27
 ```
 
-The output confirms that each function operates correctly, accepting parameters and returning the expected results. Note that integer division truncates decimal values.
+This output demonstrates mastery of Go's basic function concepts:
+- **Function declaration**: Each function follows the `func name(param type) returnType` pattern correctly
+- **Parameter handling**: Functions accept input values through named parameters (a, b)
+- **Return values**: Each function returns a single integer result using the `return` statement
+- **Function calls**: The main function successfully calls each calculator function with different arguments
+- **Result usage**: Return values are captured in variables (`result1`, `result2`) and used directly in expressions
+- **Expression chaining**: Functions can be chained together (`add(multiply(4, 5), subtract(10, 3))`) to create more complex calculations
+- **Integer division**: Note that `10 / 3 = 3` demonstrates Go's integer division behavior (truncation)
 
-## Mastery Verification
-
-Complete this Exercise by achieving:
-
-1. **Function Declaration**: Each function follows the `func name(param type) returnType` pattern
-2. **Parameter Handling**: Functions accept input values through parameters
-3. **Return Values**: Each function returns a single result value
-4. **Function Calls**: The main function successfully calls each calculator function
-5. **Result Usage**: Return values are captured and used in variables or expressions
-6. **Compilation**: The program compiles without errors using `go build`
-7. **Execution**: Running the program produces the expected calculator output
 
 ## Common Implementation Issues
 

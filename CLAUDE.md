@@ -49,6 +49,36 @@ All Go Exercises must:
 - **Build Incrementally**: Each Exercise uses only concepts mastered in previous Exercises
 - **Single Concept Focus**: Address exactly one Go concept per Exercise
 
+### Go-Specific Incremental Step Focus
+
+For optimal token efficiency and cognitive focus in Go exercises:
+
+#### Critical Context (MUST preserve):
+- **Package declaration**: Always show `package main` or relevant package name
+- **Import statements**: Include imports relevant to new additions
+- **Function signatures**: Show `func main()` and any function being modified
+- **Struct definitions**: Include struct types when adding methods or fields
+- **Interface definitions**: Show interfaces when implementing or extending
+- **Type declarations**: Include custom types being used or extended
+
+#### Transient Details (SHOULD omit with descriptive comments):
+- **Previous variable declarations**: Replace with comments like `// Method 1: var declaration with type (from Step 1)`
+- **Completed function implementations**: Replace with `// authentication logic from Step 2`
+- **Earlier error handling**: Replace with `// error handling implemented in Step 3`
+- **Previous output statements**: Replace with `// output formatting from previous steps`
+
+#### Go-Specific Comment Examples:
+- `// Package imports and variable declarations from Steps 1-2`
+- `// HTTP server setup from Step 1`
+- `// Database connection logic from Step 2` 
+- `// JSON marshaling functions from Step 3`
+- `// Error handling middleware from previous implementation`
+
+#### Step Structure:
+- **Step 1**: Complete Go program with package, imports, basic structure
+- **Subsequent Steps**: Critical context + descriptive comments + new incremental additions
+- **Execute and Verify**: Final step combines `go run` execution with output verification and concept demonstration
+
 ### Code Quality Standards
 
 - **Go Standards**: Follow official Go style guide and best practices

@@ -60,7 +60,7 @@ func main() {
 
 ### Step 2: Add Type Inference and Short Declaration
 
-Extend the program with more declaration patterns:
+Extend the program with more declaration patterns. Add the following to your existing code:
 
 ```go
 package main
@@ -68,19 +68,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("=== Go Variables and Types Demo ===")
-	
-	// Method 1: var declaration with type
-	var name string = "Alice"
-	var age int = 30
-	var temperature float64 = 98.6
-	var isActive bool = true
-	
-	fmt.Println("\n1. Explicit Type Declaration:")
-	fmt.Printf("name: %v (type: %T)\n", name, name)
-	fmt.Printf("age: %v (type: %T)\n", age, age)
-	fmt.Printf("temperature: %v (type: %T)\n", temperature, temperature)
-	fmt.Printf("isActive: %v (type: %T)\n", isActive, isActive)
+	// Method 1: var declaration with type (from Step 1)
 	
 	// Method 2: var with type inference
 	var city = "New York"
@@ -106,7 +94,7 @@ func main() {
 
 ### Step 3: Add Zero Values, Constants, and Type Sizes
 
-Demonstrate zero values, constants, and memory sizes:
+Add the `unsafe` import and demonstrate zero values, constants, and memory sizes:
 
 ```go
 package main
@@ -117,39 +105,7 @@ import (
 )
 
 func main() {
-	fmt.Println("=== Go Variables and Types Demo ===")
-	
-	// Method 1: var declaration with type
-	var name string = "Alice"
-	var age int = 30
-	var temperature float64 = 98.6
-	var isActive bool = true
-	
-	fmt.Println("\n1. Explicit Type Declaration:")
-	fmt.Printf("name: %v (type: %T)\n", name, name)
-	fmt.Printf("age: %v (type: %T)\n", age, age)
-	fmt.Printf("temperature: %v (type: %T)\n", temperature, temperature)
-	fmt.Printf("isActive: %v (type: %T)\n", isActive, isActive)
-	
-	// Method 2: var with type inference
-	var city = "New York"
-	var score = 95.5
-	var count = 100
-	
-	fmt.Println("\n2. Type Inference:")
-	fmt.Printf("city: %v (type: %T)\n", city, city)
-	fmt.Printf("score: %v (type: %T)\n", score, score)
-	fmt.Printf("count: %v (type: %T)\n", count, count)
-	
-	// Method 3: short declaration
-	country := "USA"
-	rating := 4.5
-	total := 250
-	
-	fmt.Println("\n3. Short Declaration:")
-	fmt.Printf("country: %v (type: %T)\n", country, country)
-	fmt.Printf("rating: %v (type: %T)\n", rating, rating)
-	fmt.Printf("total: %v (type: %T)\n", total, total)
+	// Variable declarations and output from Steps 1-2
 	
 	// Zero values
 	var emptyString string
@@ -173,7 +129,7 @@ func main() {
 	fmt.Printf("maxRetries: %v (type: %T)\n", maxRetries, maxRetries)
 	fmt.Printf("greeting: %v (type: %T)\n", greeting, greeting)
 	
-	// Type sizes
+	// Type sizes (using variables from Step 1)
 	fmt.Println("\n6. Type Sizes:")
 	fmt.Printf("size of int: %d bytes\n", unsafe.Sizeof(age))
 	fmt.Printf("size of float64: %d bytes\n", unsafe.Sizeof(temperature))
@@ -186,7 +142,7 @@ func main() {
 
 ### Step 4: Complete with Type Conversions and Scope
 
-Add type conversions and demonstrate variable scope:
+Add the `strconv` import, scope function, and complete with type conversions:
 
 ```go
 package main
@@ -203,68 +159,7 @@ func demonstrateScope() {
 }
 
 func main() {
-	fmt.Println("=== Go Variables and Types Demo ===")
-	
-	// Method 1: var declaration with type
-	var name string = "Alice"
-	var age int = 30
-	var temperature float64 = 98.6
-	var isActive bool = true
-	
-	fmt.Println("\n1. Explicit Type Declaration:")
-	fmt.Printf("name: %v (type: %T)\n", name, name)
-	fmt.Printf("age: %v (type: %T)\n", age, age)
-	fmt.Printf("temperature: %v (type: %T)\n", temperature, temperature)
-	fmt.Printf("isActive: %v (type: %T)\n", isActive, isActive)
-	
-	// Method 2: var with type inference
-	var city = "New York"
-	var score = 95.5
-	var count = 100
-	
-	fmt.Println("\n2. Type Inference:")
-	fmt.Printf("city: %v (type: %T)\n", city, city)
-	fmt.Printf("score: %v (type: %T)\n", score, score)
-	fmt.Printf("count: %v (type: %T)\n", count, count)
-	
-	// Method 3: short declaration
-	country := "USA"
-	rating := 4.5
-	total := 250
-	
-	fmt.Println("\n3. Short Declaration:")
-	fmt.Printf("country: %v (type: %T)\n", country, country)
-	fmt.Printf("rating: %v (type: %T)\n", rating, rating)
-	fmt.Printf("total: %v (type: %T)\n", total, total)
-	
-	// Zero values
-	var emptyString string
-	var zeroInt int
-	var zeroFloat float64
-	var falseBool bool
-	
-	fmt.Println("\n4. Zero Values:")
-	fmt.Printf("emptyString: '%v' (type: %T)\n", emptyString, emptyString)
-	fmt.Printf("zeroInt: %v (type: %T)\n", zeroInt, zeroInt)
-	fmt.Printf("zeroFloat: %v (type: %T)\n", zeroFloat, zeroFloat)
-	fmt.Printf("falseBool: %v (type: %T)\n", falseBool, falseBool)
-	
-	// Constants
-	const pi float64 = 3.14159
-	const maxRetries = 3
-	const greeting = "Welcome"
-	
-	fmt.Println("\n5. Constants:")
-	fmt.Printf("pi: %v (type: %T)\n", pi, pi)
-	fmt.Printf("maxRetries: %v (type: %T)\n", maxRetries, maxRetries)
-	fmt.Printf("greeting: %v (type: %T)\n", greeting, greeting)
-	
-	// Type sizes
-	fmt.Println("\n6. Type Sizes:")
-	fmt.Printf("size of int: %d bytes\n", unsafe.Sizeof(age))
-	fmt.Printf("size of float64: %d bytes\n", unsafe.Sizeof(temperature))
-	fmt.Printf("size of bool: %d bytes\n", unsafe.Sizeof(isActive))
-	fmt.Printf("size of string: %d bytes\n", unsafe.Sizeof(name))
+	// Variable declarations, zero values, constants, and type sizes from Steps 1-3
 	
 	// Type conversions
 	var intValue int = 42
@@ -276,7 +171,7 @@ func main() {
 	fmt.Printf("floatValue: %v (type: %T)\n", floatValue, floatValue)
 	fmt.Printf("backToInt: %v (type: %T)\n", backToInt, backToInt)
 	
-	// String conversions
+	// String conversions (using age variable from Step 1)
 	stringAge := strconv.Itoa(age)
 	parsedAge, _ := strconv.Atoi(stringAge)
 	
@@ -294,7 +189,7 @@ func main() {
 
 ### Step 5: Execute and Verify
 
-Run the complete program:
+Run your complete program:
 
 ```bash
 go run data-collector.go
@@ -351,20 +246,15 @@ Inside function - localVar: I'm local to this function
 Main function continues after demonstrateScope()
 ```
 
-## Implementation Verification
-
-Your data collection program demonstrates mastery when it compiles and runs successfully, producing output that shows:
-
-- All variable declarations working correctly (explicit type, inference, short declaration)
-- Proper zero values displayed for each basic Go type (empty strings, zero numbers, false booleans)
-- Constants behaving correctly with both typed and untyped examples
-- Type conversions executing without errors, showing numeric and string transformations
-- Variable scope working as expected, with function-local variables properly isolated
-- Memory size information accurately reported using unsafe.Sizeof for different types
-- Clean, formatted output displaying both values and their corresponding types (%T verb)
-- The program running from start to finish without compilation errors or runtime panics
-
-Execute `go run data-collector.go` and verify the output matches the expected results shown in Step 5.
+This output demonstrates mastery of Go's variable and type system:
+- **Three declaration methods**: Explicit typing, type inference, and short declaration working correctly
+- **Zero values**: Go's predictable initialization behavior for all basic types
+- **Type safety**: The `%T` verb showing runtime type information for every variable
+- **Constants**: Both typed and untyped constants behaving correctly at compile-time
+- **Type conversions**: Explicit conversions between numeric types and string transformations using `strconv`
+- **Variable scope**: Function-local variables properly isolated from main function scope
+- **Memory introspection**: `unsafe.Sizeof` revealing the actual memory footprint of different Go types
+- **Complete execution**: Program compiles and runs without errors, producing comprehensive type demonstration
 
 ## Common Implementation Issues
 

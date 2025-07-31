@@ -7,6 +7,16 @@
 - **Prerequisites**: Go installation and command-line familiarity
 - **Estimated Time**: 20 minutes
 
+## What You'll Build
+
+You'll create a Go program that demonstrates the three essential components of every Go executable: package declaration, imports, and the main function. The program will display system information to prove it's running successfully.
+
+**Tangible Result**: A working Go program that executes and displays your Go version, operating system, architecture, and CPU count.
+
+## Conceptual Overview
+
+Every Go executable program follows a specific structure with three mandatory components. The `package main` declaration tells Go this is an executable program, not a library. The import section brings in external packages that provide functionality beyond the core language. The `func main()` is the entry point where program execution begins - without it, Go won't know where to start running your code.
+
 ## Foundation Requirements
 
 Verify Go installation:
@@ -45,9 +55,9 @@ func main() {
 }
 ```
 
-### Step 2: Execute Program
+### Step 2: Execute and Verify
 
-Run the program:
+Run your complete program:
 
 ```bash
 go run hello-system.go
@@ -62,13 +72,11 @@ Architecture: amd64
 CPU Count: 8
 ```
 
-## Verification
-
-Program runs successfully and outputs:
-- Go version information 
-- Operating system and architecture
-- CPU count
-- All three program structure elements working: package main, import section, main function
+This output demonstrates mastery of Go's basic program structure:
+- **package main**: Defines an executable program (not a library)
+- **import section**: Brings in required packages (fmt for printing, runtime for system info)
+- **func main()**: Entry point where execution begins
+- **Successful execution**: Program compiles and runs, producing system information output
 
 
 ## Path Integration

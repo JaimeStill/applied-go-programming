@@ -17,7 +17,7 @@
 
 {{CONCEPTUAL_CONTEXT_1_TO_5_PARAGRAPHS}}
 
-## Concept Prerequisites
+## Foundation Requirements
 
 This Exercise demonstrates {{CONCEPT}} which assumes familiarity with:
 {{#each PREREQUISITE_CONCEPTS}}
@@ -26,48 +26,36 @@ This Exercise demonstrates {{CONCEPT}} which assumes familiarity with:
 
 **Starting Point**: This exercise provides all necessary code from scratch. No prior exercise code is required.
 
-## Practical Implementation
+## Build {{PRACTICAL_OUTCOME_DESCRIPTION}}
 
-### Step 1: Initial Setup
+### Initial Step: {{INITIAL_STEP_TITLE}}
 
-Create the foundational structure for this exercise:
+{{INITIAL_SETUP_DESCRIPTION}}
 
-```{{LANGUAGE}}
-{{COMPLETE_SETUP_CODE}}
-```
+{{INITIAL_SETUP_IMPLEMENTATION}}
 
-{{SETUP_EXPLANATION}}
+{{INITIAL_SETUP_EXPLANATION}}
 
-### Step 2: Complete Implementation
+{{#each STEPS}}
+### Step {{@index}}: {{STEP_TITLE}}
 
-Follow these steps to demonstrate {{CONCEPT}}:
+{{STEP_DESCRIPTION}}
 
-```{{LANGUAGE}}
-{{COMPLETE_IMPLEMENTATION_CODE}}
-```
+{{STEP_IMPLEMENTATION}}
 
-{{IMPLEMENTATION_EXPLANATION}}
+{{STEP_EXPLANATION}}
 
-### Step 3: Verification
+{{/each}}
 
-Execute your implementation to verify it works:
+### Final Step: Execute and Verify
 
-```{{LANGUAGE}}
-{{VERIFICATION_CODE}}
-```
+Validate your complete implementation:
 
-**Expected Output**:
-```
-{{EXPECTED_OUTPUT}}
-```
+{{EXECUTION_DETAILS}}
 
-{{VERIFICATION_EXPLANATION}}
+{{EXECUTION_VERIFICATION}}
 
-## Implementation Verification
-
-Your implementation demonstrates mastery when:
-
-{{IMPLEMENTATION_VERIFICATION_WALKTHROUGH}}
+{{VERIFICATION_EXPLANATION_AND_WHAT_THIS_DEMONSTRATES}}
 
 ## Common Implementation Issues
 
@@ -116,7 +104,7 @@ Your implementation demonstrates mastery when:
 
 </details>
 
-## Concept Progression
+## Path Integration
 
 **Concept Demonstrated**: {{CONCEPT}}
 **Next Concept in Path**: {{NEXT_CONCEPT}}

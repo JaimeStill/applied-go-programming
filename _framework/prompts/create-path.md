@@ -129,7 +129,7 @@ Create project-specific files:
 
 **CLAUDE.md**: Project implementation guide with:
 - AECS framework compliance directive
-- Subject-specific implementation requirements
+- Subject-specific implementation requirements (including Incremental Step Focus guidance for the domain)
 - Generated subagent usage instructions
 - Content development processes
 

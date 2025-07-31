@@ -60,6 +60,69 @@
 - Examples must produce tangible results in the domain context
 - Brief explanations only when essential to understanding the current step
 
+## Incremental Step Focus Requirement
+
+**MANDATORY**: Exercise steps must optimize for cognitive focus and token efficiency through intelligent context management:
+
+### Critical Context vs Transient Details
+
+**Critical Context** - MUST be preserved in subsequent steps:
+- Structural elements that provide necessary orientation
+- Framework/environment setup that affects new additions
+- Function signatures, class definitions, package declarations
+- Configuration settings that influence current work
+- Essential scaffolding for understanding placement of new content
+
+**Transient Details** - SHOULD be summarized or omitted:
+- Implementation specifics from previous steps that don't affect current work
+- Repetitive code blocks that don't provide new learning value
+- Previous examples that are complete and self-contained
+- Details that would distract from the current step's focus
+
+### Context-Aware Comment Guidelines
+
+Replace omitted content with descriptive comments that provide context:
+- ✅ `// Method 1: var declaration with type (shown in Step 1)`
+- ✅ `// Database connection setup (from Step 2)`
+- ✅ `// Canvas initialization and tool selection (Steps 1-2)`
+- ❌ `// ... existing code above`
+- ❌ `// previous code here`
+
+### Step Structure Requirements
+
+- **First Step**: Provide complete foundational setup for the domain
+- **Subsequent Steps**: Show critical context + descriptive comments + new incremental additions
+- **Context Preservation**: Include structural elements essential for understanding placement
+- **Smart Omission**: Remove transient details that don't contribute to current learning objective
+- **Execute and Verify**: Final step integrates execution and verification rather than separate sections
+
+### Domain-Agnostic Applications
+
+**Programming**:
+- Keep: package declarations, imports, function signatures, class definitions
+- Omit: previous method implementations, completed variable declarations
+- Comment: `// authentication setup from Step 2`, `// data models defined in Step 1`
+
+**Cooking**:
+- Keep: recipe structure, ingredient list, cooking method, equipment needed
+- Omit: completed preparation steps, finished sauce recipes
+- Comment: `// vegetables chopped in Step 1`, `// sauce prepared in Step 3`
+
+**Drawing**:
+- Keep: canvas setup, tool selection, composition framework
+- Omit: completed background elements, finished detail work
+- Comment: `// landscape background from Steps 1-2`, `// foreground objects added in Step 4`
+
+**System Administration**:
+- Keep: script structure, environment variables, configuration headers
+- Omit: completed service configurations, finished security settings
+- Comment: `// network configuration from Step 2`, `// user permissions set in Step 3`
+
+**Research**:
+- Keep: methodology framework, data collection approach, analysis structure
+- Omit: completed data gathering, finished preliminary analysis
+- Comment: `// survey data collected in Step 1`, `// initial findings from Step 3`
+
 **Domain-Agnostic Complete Examples**:
 - ✓ **Programming**: Complete code that compiles and runs
 - ✓ **System Administration**: Complete command sequences that work
