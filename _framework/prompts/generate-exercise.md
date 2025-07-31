@@ -13,15 +13,15 @@ Create a comprehensive, hands-on Exercise following the Agentic Exercise Curricu
 
 ### Exercise Primacy Enforcement
 - Exercise MUST center on hands-on building, not theoretical implementation
-- NO passive consumption elements (explanations without immediate implementation)
+- Brief conceptual context (1-5 paragraphs) ALLOWED when it supports hands-on building
 - ALL learning MUST occur through immediate practical building
 - Every section MUST require active implementation rather than reading
 
 ### Concept Atomicity Validation
 - Exercise MUST address exactly ONE Concept in its simplest useful form
-- NO multi-concept implementations that violate atomicity
+- Atomicity scales with complexity: fundamental concepts may group related features, advanced concepts require stricter focus
 - Single Concept MUST be implementable through focused hands-on building
-- Exercise scope MUST remain atomic and focused
+- Exercise scope MUST remain atomic and focused for the appropriate complexity level
 
 ### Applied Understanding Requirements
 - Concept MUST be demonstrated through practical implementation producing tangible results
@@ -130,8 +130,8 @@ Fill the template with:
 - Performance implications and optimization opportunities
 - Security and reliability concerns where applicable
 
-**Extension Challenges:**
-- 3 additional challenges of increasing difficulty
+**Enhancement Exercises:**
+- 3 additional exercises of increasing difficulty
 - Optional integrations with other concepts
 - Performance optimization opportunities
 - Creative applications of the core concept
@@ -228,14 +228,14 @@ Generate a complete exercise document that includes:
 4. Production-quality code examples and solutions
 5. Common mistakes and debugging guidance
 6. Real-world context and applications
-7. Extension challenges and further exploration
+7. Enhancement exercises and further exploration
 8. Complete testing and validation framework
 
-## Success Criteria
+## Implementation Verification
 
 The generated exercise should:
 - Be immediately implementable by learners
-- Provide clear success criteria and validation methods
+- Provide clear implementation verification and validation methods
 - Build on previous knowledge while introducing new concepts
 - Connect to real-world professional scenarios
 - Follow AECS principles of hands-on, progressive learning

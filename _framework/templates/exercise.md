@@ -13,6 +13,10 @@
 
 **Tangible Result**: {{OBSERVABLE_RESULT}}
 
+## Conceptual Overview
+
+{{CONCEPTUAL_CONTEXT_1_TO_5_PARAGRAPHS}}
+
 ## Concept Prerequisites
 
 This Exercise demonstrates {{CONCEPT}} which assumes familiarity with:
@@ -59,13 +63,11 @@ Execute your implementation to verify it works:
 
 {{VERIFICATION_EXPLANATION}}
 
-## Success Criteria
+## Implementation Verification
 
-Your implementation is complete when:
+Your implementation demonstrates mastery when:
 
-{{#each SUCCESS_CRITERIA}}
-- [ ] {{this}}
-{{/each}}
+{{IMPLEMENTATION_VERIFICATION_WALKTHROUGH}}
 
 ## Common Implementation Issues
 
@@ -89,7 +91,7 @@ Your implementation is complete when:
 
 ## Implementation Extension
 
-**Optional Challenge**: {{EXTENSION_CHALLENGE}}
+**Enhancement Exercise**: {{EXTENSION_CHALLENGE}}
 
 **Additional Requirements**:
 {{#each EXTENSION_REQUIREMENTS}}

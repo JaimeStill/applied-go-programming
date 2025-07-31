@@ -26,6 +26,30 @@
 - ✓ **Self-Contained**: "Create a new file main.go with the following structure"
 - ✗ **Cross-Reference**: "Modify the main.go file from the previous exercise"
 
+## Complexity-Scaled Concept Atomicity
+
+**MANDATORY**: Concept atomicity scales appropriately with complexity level:
+
+**Fundamental Concepts (Early Stages)**:
+- Related basic features may be grouped when they naturally reinforce learning
+- Example: Variable declarations, basic types, and simple conversions as "Variables and Types"
+- Focus on building foundational understanding through related concept clusters
+
+**Advanced Concepts (Later Stages)**:
+- Stricter single-concept focus to prevent cognitive overload
+- Example: Separate exercises for each concurrency pattern or optimization technique
+- Clear boundaries between complex, independent concepts
+
+## Conceptual Context Guidelines
+
+**ALLOWED**: Brief explanatory context (1-5 paragraphs) that enhances hands-on building:
+- Essential background for understanding what will be built
+- Mental models that support practical implementation
+- Explanation of "why" behind the building tasks
+- Context that motivates and frames the hands-on work
+
+**PROHIBITED**: Explanations that substitute for or delay hands-on building
+
 ## Complete Step-by-Step Implementation Requirement
 
 **MANDATORY**: Every Exercise must provide complete, actionable examples at every step:

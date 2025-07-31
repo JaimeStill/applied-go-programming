@@ -172,7 +172,7 @@ Using the exercise template at `_framework/templates/exercise.md`, create:
 - **Progressive Building**: Use only previously mastered concepts
 
 **Practical Validation**:
-- **Success Criteria**: Clear measures of successful implementation
+- **Implementation Verification**: Clear measures of successful implementation
 - **Testing Requirements**: How to verify the working implementation
 - **Real-World Context**: Practical applications of the concept
 

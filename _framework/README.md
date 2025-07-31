@@ -38,7 +38,7 @@ Subject → Path → Stage → Concept → Exercise (+ Appendix parallel)
 Every learning interaction centers on doing rather than consuming. The Exercise is the atomic unit of all learning activity, designed to immediately engage learners in practical application.
 
 **Concept Atomicity**
-Each Exercise addresses exactly one Concept in its simplest useful form. This ensures focused learning outcomes and prevents cognitive overload while maintaining clear progression markers.
+Each Exercise addresses exactly one Concept in its simplest useful form, with atomicity scaling based on complexity level. For fundamental concepts, related basic features may be grouped as a single concept (e.g., variable declarations, types, and basic conversions). For advanced topics, stricter single-concept focus prevents cognitive overload while maintaining clear progression markers.
 
 **Progressive Complexity**
 Concepts build incrementally across Stages, with each new Concept depending on previously established understanding through practical mastery.
@@ -53,6 +53,7 @@ A Path represents the complete learning journey through a Subject, organized int
 
 **Exercise Structure**
 Each Exercise demonstrates a single Concept through practical implementation:
+- Brief conceptual context (1-5 paragraphs) that supports hands-on building
 - Immediate hands-on building requirements
 - Working implementations that produce tangible results
 - Step-by-step implementation guidance
@@ -67,6 +68,19 @@ Exercises maintain strict scope limitations to ensure completion feasibility and
 
 **Learning Progression**
 Learners advance through the Path by mastering Concepts through their implementing Exercises within each Stage before progressing to subsequent Stages. This ensures foundational understanding while maintaining momentum through practical achievement of concept mastery.
+
+**Complexity-Scaled Atomicity**
+The interpretation of "single concept" scales appropriately with complexity level:
+- **Fundamental Level (Stages 1-3)**: Related basic features can be grouped as one concept when they naturally reinforce each other (e.g., variable declarations, basic types, and simple conversions)
+- **Intermediate Level (Stages 4-7)**: Concepts become more focused, with clear boundaries between related features
+- **Advanced Level (Stages 8+)**: Strict single-concept focus required due to increased cognitive complexity
+
+**Conceptual Context Guidelines**
+Brief explanatory context (1-5 paragraphs) enhances rather than violates Exercise Primacy when it:
+- Provides essential background for understanding what will be built
+- Explains the "why" behind the hands-on work
+- Offers mental models that support practical implementation
+- Does not substitute for or delay hands-on building activities
 
 ## System Architecture
 
