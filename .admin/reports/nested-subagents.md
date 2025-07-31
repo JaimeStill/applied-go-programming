@@ -233,3 +233,58 @@ This issue prevents building educational frameworks that rely on subagent valida
 
 **Report Status**: Appended report to existing GitHub Issue: [#4744 - Agent Execution Timeout: Persistent Hanging During Complex Tasks](https://github.com/anthropics/claude-code/issues/4744)
 **Next Action**: Submit GitHub issue and complete framework overhaul
+
+---
+
+## Resolution Update
+
+**Date**: 2025-07-31  
+**Claude Code Version**: 1.0.63+  
+**Status**: RESOLVED ✅
+
+### Resolution Summary
+
+The nested subagent issue has been resolved in Claude Code v1.0.63+. Testing confirms that the Task tool can now be used to engage subagents without causing recursive spawning or session timeouts.
+
+### Verification Steps Completed
+
+1. **Direct Task Tool Test**: Successfully engaged single subagent using Task tool
+2. **Parallel Engagement Test**: Successfully engaged all three subagents simultaneously
+3. **Response Quality**: All subagents responded correctly with expected functionality
+4. **No Recursive Spawning**: No nested loops or timeouts observed
+
+### Framework Updates Implemented
+
+1. **_framework/CLAUDE.md**:
+   - Removed warnings about Task tool causing recursive spawning
+   - Updated subagent engagement protocol to use automated Task tool
+   - Converted manual user invocation patterns to automated patterns
+
+2. **_framework/prompts/generate-exercise.md**:
+   - Replaced manual user-directed process with automated engagement
+   - Added user review step before integrating subagent feedback
+   - Streamlined the validation workflow
+
+3. **_framework/prompts/create-path.md**:
+   - Removed references to recursive spawning issues
+   - Updated benefits to emphasize automated validation
+
+### New Automated Workflow
+
+The AECS framework now supports fully automated subagent engagement:
+
+```python
+# Parallel subagent engagement example
+Task(subagent_type="technical-expert", prompt="Review for technical compliance...")
+Task(subagent_type="learning-designer", prompt="Review for AECS pedagogy...")
+Task(subagent_type="content-editor", prompt="Review for AECS structure...")
+```
+
+### Benefits Realized
+
+- **Automated Validation**: No manual user intervention required
+- **Parallel Processing**: All three subagents can review simultaneously
+- **Improved Efficiency**: Faster exercise generation and validation
+- **Better UX**: Seamless workflow for content creators
+
+**Current Status**: Framework fully transitioned to automated subagent engagement. All manual workarounds have been removed.

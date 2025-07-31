@@ -150,66 +150,24 @@ Fill the template with:
 
 ### Step 5: MANDATORY AECS-Constrained Expert Review
 
-**REQUIRED**: After generating the Exercise content, request user to engage standardized subagents for AECS compliance review. Due to Claude Code's recursive spawning issue with Task tool subagent invocation, subagent engagement requires direct user invocation.
+**REQUIRED**: After generating the Exercise content, engage standardized subagents for AECS compliance review using the Task tool. Execute all three reviews in parallel for efficiency.
 
-### User-Directed Subagent Review Process
+### Automated Subagent Review Process
 
-**Step 5.1**: Request user to engage standardized subagents using direct invocation syntax.
+**Step 5.1**: Engage all three standardized subagents simultaneously to review the generated Exercise:
 
-**Step 5.2**: Provide exact prompts for user to copy and execute:
+1. **Technical Expert**: Reviews technical implementation quality and single-concept focus
+2. **Learning Designer**: Validates AECS pedagogy and Exercise Primacy  
+3. **Content Editor**: Ensures AECS vocabulary and structure compliance
 
-**Technical Expert Review**: Request user to invoke:
-```
-@agent-technical-expert You are reviewing an EXERCISE document. This exercise should demonstrate [SUBJECT] best practices through hands-on implementation.
+Execute parallel reviews using the Task tool with appropriate prompts for each subagent, including the full Exercise content in each review request.
 
-Review scope: Identify code that doesn't produce tangible, testable results or violates single-concept focus.
+**Step 5.2**: After receiving all subagent feedback, present a consolidated review summary to the user for approval. Include:
+- Technical Expert assessment and recommendations
+- Learning Designer's identified violations and fixes
+- Content Editor's structural improvements
 
-Your feedback should:
-- Assess technical implementation quality  
-- Verify single-concept demonstration
-- Suggest specific improvements for hands-on building
-- Focus only on [SUBJECT] technical aspects
-
-Format your response as: Assessment → Recommendations
-
-[EXERCISE_CONTENT_HERE]
-```
-
-**Learning Designer Review**: Request user to invoke:
-```
-@agent-learning-designer You are reviewing an EXERCISE document that should enforce Exercise Primacy through hands-on building.
-
-Review scope: Identify passive consumption elements and multi-concept violations.
-
-Your feedback should:
-- Identify specific AECS principle violations
-- Suggest structural reorganization for immediate hands-on engagement  
-- Verify single-concept atomicity and proper dependency chains
-- Focus on learning design principles
-
-Format your response as: Violation → Structural Fix
-
-[EXERCISE_CONTENT_HERE]
-```
-
-**Content Editor Review**: Request user to invoke:
-```
-@agent-content-editor You are reviewing an EXERCISE document for AECS vocabulary and structure compliance.
-
-Review scope: AECS vocabulary usage and Subject→Path→Stage→Concept→Exercise hierarchy.
-
-Your feedback should:
-- Identify vocabulary deviations with specific examples
-- Suggest structure corrections for Exercise-driven format
-- Ensure all sections center on doing rather than consuming
-- Focus only on structural and vocabulary compliance
-
-Format your response as: Issue → Correction
-
-[EXERCISE_CONTENT_HERE]
-```
-
-**Step 5.3**: After receiving subagent feedback from user, incorporate recommendations into the final Exercise document, ensuring all AECS principles are enforced.
+Allow the user to review and approve changes before integration. This ensures the highest quality content while maintaining human oversight of the final Exercise.
 
 ### Step 6: AECS Principle Verification
 Ensure the Exercise:

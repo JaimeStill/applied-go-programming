@@ -79,14 +79,12 @@
 
 ## Subagent Engagement Protocol
 
-**CRITICAL**: Use standardized subagents with direct user invocation. All learning paths use identical subagent names to eliminate recursive spawning issues.
+Use standardized subagents for automated AECS validation. All learning paths use identical subagent names for consistency and reliability.
 
 **Standardized Subagents**: Every project contains these three subagents generated from subject-agnostic templates:
-- **@agent-technical-expert**: Subject-specific technical implementation validation
-- **@agent-learning-designer**: AECS pedagogy and learning progression validation  
-- **@agent-content-editor**: AECS vocabulary and structure compliance validation
-
-**IMPORTANT**: Subagent activation requires direct user invocation using `@agent-[name]` syntax. Do NOT use the Task tool for subagent engagement as it causes recursive spawning and session timeouts.
+- **technical-expert**: Subject-specific technical implementation validation
+- **learning-designer**: AECS pedagogy and learning progression validation  
+- **content-editor**: AECS vocabulary and structure compliance validation
 
 ### Subagent Review Framework
 
@@ -99,13 +97,16 @@
 
 ### Scoped Review Patterns
 
-**User-Directed Subagent Engagement**:
+**Automated Subagent Engagement**:
 
-Since direct user invocation is required to prevent recursive spawning, framework prompts should instruct users to engage subagents using these exact patterns:
+Use the Task tool to engage subagents for AECS validation. The following patterns ensure proper context and scope:
 
 **Technical Expert Review**:
-```
-@agent-technical-expert You are reviewing an [ARTIFACT_TYPE] document. This artifact should demonstrate [SUBJECT] best practices through hands-on implementation.
+```python
+Task(
+    subagent_type="technical-expert",
+    description="Review [ARTIFACT_TYPE] for technical compliance",
+    prompt="""You are reviewing an [ARTIFACT_TYPE] document. This artifact should demonstrate [SUBJECT] best practices through hands-on implementation.
 
 Review scope: Identify code that doesn't produce tangible, testable results or violates single-concept focus.
 
@@ -116,11 +117,17 @@ Your feedback should:
 - Focus only on [SUBJECT] technical aspects
 
 Format your response as: Assessment → Recommendations
+
+[ARTIFACT_CONTENT]"""
+)
 ```
 
 **Learning Designer Review**:
-```
-@agent-learning-designer You are reviewing an [ARTIFACT_TYPE] document that should enforce Exercise Primacy through hands-on building.
+```python
+Task(
+    subagent_type="learning-designer",
+    description="Review [ARTIFACT_TYPE] for AECS pedagogy",
+    prompt="""You are reviewing an [ARTIFACT_TYPE] document that should enforce Exercise Primacy through hands-on building.
 
 Review scope: Identify passive consumption elements and multi-concept violations.
 
@@ -131,11 +138,17 @@ Your feedback should:
 - Focus on learning design principles
 
 Format your response as: Violation → Structural Fix
+
+[ARTIFACT_CONTENT]"""
+)
 ```
 
 **Content Editor Review**:
-```
-@agent-content-editor You are reviewing an [ARTIFACT_TYPE] document for AECS vocabulary and structure compliance.
+```python
+Task(
+    subagent_type="content-editor",
+    description="Review [ARTIFACT_TYPE] for AECS structure",
+    prompt="""You are reviewing an [ARTIFACT_TYPE] document for AECS vocabulary and structure compliance.
 
 Review scope: AECS vocabulary usage and Subject→Path→Stage→Concept→Exercise hierarchy.
 
@@ -146,6 +159,9 @@ Your feedback should:
 - Focus only on structural and vocabulary compliance
 
 Format your response as: Issue → Correction
+
+[ARTIFACT_CONTENT]"""
+)
 ```
 
 ### Feedback Validation Protocol

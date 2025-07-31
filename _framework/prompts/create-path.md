@@ -31,13 +31,12 @@ Automatically create the three standardized AECS-constrained subagents using `_f
 1. Execute: `_framework/prompts/generate-subagents.md. SUBJECT is "[SUBJECT]".`
 2. Templates from `_framework/templates/agents/` are processed with [SUBJECT] parameter
 3. Three standardized subagents created in `.claude/agents/` directory
-4. Eliminates recursive spawning through predictable naming and direct user invocation
+4. Enables reliable automated subagent engagement
 
 **Benefits of Standardized Approach**:
-- **Eliminates Recursive Spawning**: Predictable subagent names prevent Task tool issues
 - **Framework Consistency**: All learning paths use identical subagent references  
 - **Subject Flexibility**: Templates adapt to any domain through parameterization
-- **Direct User Invocation**: Subagents work via `@agent-[name]` syntax without nesting
+- **Automated Validation**: Subagents can be engaged via Task tool for streamlined workflow
 - **Session Independence**: Subagents must exist at session start to be recognized
 
 ## AECS Compliance Requirements
