@@ -278,6 +278,7 @@ The created Exercise MUST:
 - Hands-on tasks requiring practical implementation and testing
 - Clear success criteria based on working implementations
 - Proper integration with existing infrastructure
+- Independent Challenges that use only concepts from current exercise and prior exercises in the learning path
 
 ## Example Usage
 

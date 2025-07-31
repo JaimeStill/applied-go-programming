@@ -78,6 +78,70 @@ This output demonstrates mastery of Go's basic program structure:
 - **func main()**: Entry point where execution begins
 - **Successful execution**: Program compiles and runs, producing system information output
 
+## Independent Challenge
+
+Create a personal Go environment reporter that displays basic information about your Go installation and system. Your program should demonstrate proper Go program structure using only the concepts covered in this exercise.
+
+**Requirements**:
+- Use proper package declaration for an executable program
+- Import fmt and runtime packages only (as covered in the exercise)
+- Implement main function as the program entry point
+- Display Go version using runtime.Version()
+- Show operating system using runtime.GOOS
+- Present architecture using runtime.GOARCH
+- Display CPU count using runtime.NumCPU()
+- Format output with fmt.Println() and fmt.Printf()
+- Include a program title and clear section headers
+
+
+### Independent Challenge Solution
+
+*Try building the solution yourself before looking at this reference.*
+
+<details>
+<summary>Go Environment Reporter Solution</summary>
+
+```go
+package main
+
+import (
+	"fmt"
+	"runtime"
+)
+
+func main() {
+	fmt.Println("=== Go Environment Reporter ===")
+	fmt.Println("Displaying basic system information")
+	fmt.Println()
+	
+	fmt.Println("Go Installation Details:")
+	fmt.Printf("Go Version: %s\n", runtime.Version())
+	fmt.Printf("Operating System: %s\n", runtime.GOOS)
+	fmt.Printf("Architecture: %s\n", runtime.GOARCH)
+	fmt.Printf("CPU Count: %d\n", runtime.NumCPU())
+	
+	fmt.Println()
+	fmt.Println("Program Structure Verification:")
+	fmt.Println("✓ package main - Executable program")
+	fmt.Println("✓ import section - fmt and runtime packages")
+	fmt.Println("✓ func main() - Program entry point")
+	fmt.Println("✓ Output statements - Information display")
+	
+	fmt.Println()
+	fmt.Println("Environment report completed successfully!")
+}
+```
+
+**Key Implementation Notes**:
+- **Package Declaration**: Uses `package main` to create an executable program (as demonstrated in the exercise)
+- **Import Section**: Only imports `fmt` and `runtime` packages that were covered in the main exercise
+- **Main Function**: Implements `func main()` as the program entry point exactly as shown in the exercise
+- **Output Functions**: Uses only `fmt.Println()` and `fmt.Printf()` functions demonstrated in the exercise
+- **Runtime Functions**: Uses only the four runtime functions covered: Version(), GOOS, GOARCH, and NumCPU()
+- **Program Structure**: Follows the exact three-component structure taught in the exercise
+- **No New Concepts**: Avoids any packages, functions, or patterns not yet introduced to learners
+
+</details>
 
 ## Path Integration
 

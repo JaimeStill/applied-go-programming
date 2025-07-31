@@ -77,14 +77,23 @@ Validate your complete implementation:
 {{ISSUE_2_SOLUTION_CODE}}
 ```
 
-## Implementation Extension
+## Independent Challenge
 
-**Enhancement Exercise**: {{EXTENSION_CHALLENGE}}
+{{CHALLENGE_DESCRIPTION}}
 
-**Additional Requirements**:
-{{#each EXTENSION_REQUIREMENTS}}
-- {{this}}
-{{/each}}
+**Requirements**:
+{{CHALLENGE_REQUIREMENTS}}
+
+### Independent Challenge Solution
+
+*Try building the solution yourself before looking at this reference.*
+
+<details>
+<summary>{{CHALLENGE_SUMMARY_TITLE}}</summary>
+{{CHALLENGE_SOLUTION}}
+
+{{CHALLENGE_KEY_IMPLEMENTATION_NOTES}}
+</details>
 
 ## Reference Implementation
 

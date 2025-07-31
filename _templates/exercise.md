@@ -147,21 +147,23 @@ This Exercise follows Go-specific incremental step patterns:
 {{GO_RESOURCE_MANAGEMENT_PATTERN}}
 ```
 
-## Implementation Extension
+## Independent Challenge
 
-**Enhancement Exercise**: {{GO_EXTENSION_CHALLENGE}}
+{{GO_CHALLENGE_DESCRIPTION}}
 
-**Additional Go Requirements**:
-{{#each GO_EXTENSION_REQUIREMENTS}}
-- {{this}}
-{{/each}}
+**Requirements**:
+{{GO_CHALLENGE_REQUIREMENTS}}
 
-**Go-Specific Extensions**:
-- Add comprehensive error handling following Go conventions
-- Implement proper resource cleanup with defer statements
-- Add unit tests using Go's testing package
-- Include benchmark tests for performance validation
-- Follow Go style guidelines (gofmt, golint)
+### Independent Challenge Solution
+
+*Try building the solution yourself before looking at this reference.*
+
+<details>
+<summary>{{GO_CHALLENGE_SUMMARY_TITLE}}</summary>
+{{GO_CHALLENGE_SOLUTION}}
+
+{{GO_CHALLENGE_KEY_IMPLEMENTATION_NOTES}}
+</details>
 
 ## Reference Implementation
 

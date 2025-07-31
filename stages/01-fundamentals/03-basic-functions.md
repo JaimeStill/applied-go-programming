@@ -186,117 +186,93 @@ func multiply(a int, b int) int {
 }
 ```
 
-## Extension Exercise
+## Independent Challenge
 
-Build additional calculator functions by adding this code:
+Create a simple temperature converter that converts between Celsius and Fahrenheit using Go functions. Your program should demonstrate basic function definitions, parameters, return values, and function calls.
 
-```go
-// Add these functions after the basic arithmetic functions
-func remainder(a, b int) int {
-    if b == 0 {
-        fmt.Println("Warning: Division by zero, returning 0")
-        return 0
-    }
-    return a % b
-}
+**Requirements**:
+- Create a function to convert Celsius to Fahrenheit
+- Create a function to convert Fahrenheit to Celsius  
+- Add a function that doubles a temperature value
+- Use only int parameters and return values (as covered in the exercise)
+- Test your functions with different temperature values
+- Display results using fmt.Printf formatting
 
-func power(base, exponent int) int {
-    result := 1
-    for i := 0; i < exponent; i++ {
-        result = multiply(result, base)
-    }
-    return result
-}
-```
+### Independent Challenge Solution
 
-Then add these test cases to your main function:
-```go
-// Add to main function
-fmt.Printf("%d %% %d = %d\n", x, y, remainder(x, y))
-fmt.Printf("%d ^ %d = %d\n", 2, 5, power(2, 5))
-```
-
-## Complete Exercise Solution
-
-*Try building the solution yourself before looking at this complete solution.*
+*Try building the solution yourself before looking at this reference.*
 
 <details>
-<summary>Reference Implementation</summary>
+<summary>Simple Temperature Converter Solution</summary>
 
 ```go
 package main
 
-import (
-    "fmt"
-)
+import "fmt"
 
-func add(a int, b int) int {
-    return a + b
+// celsiusToFahrenheit converts Celsius temperature to Fahrenheit
+func celsiusToFahrenheit(celsius int) int {
+	return (celsius * 9 / 5) + 32
 }
 
-func subtract(a int, b int) int {
-    return a - b
+// fahrenheitToCelsius converts Fahrenheit temperature to Celsius
+func fahrenheitToCelsius(fahrenheit int) int {
+	return (fahrenheit - 32) * 5 / 9
 }
 
-func multiply(a int, b int) int {
-    return a * b
-}
-
-func divide(a int, b int) int {
-    if b == 0 {
-        fmt.Println("Warning: Division by zero, returning 0")
-        return 0
-    }
-    return a / b
-}
-
-// Enhancement functions
-func remainder(a int, b int) int {
-    if b == 0 {
-        fmt.Println("Warning: Division by zero, returning 0")
-        return 0
-    }
-    return a % b
-}
-
-func power(base int, exponent int) int {
-    result := 1
-    for i := 0; i < exponent; i++ {
-        result = multiply(result, base)
-    }
-    return result
+// doubleTemperature doubles any temperature value
+func doubleTemperature(temp int) int {
+	return temp * 2
 }
 
 func main() {
-    fmt.Println("Enhanced Calculator Functions")
-    fmt.Println("============================")
-    
-    // Basic operations
-    x, y := 10, 3
-    fmt.Printf("%d + %d = %d\n", x, y, add(x, y))
-    fmt.Printf("%d - %d = %d\n", x, y, subtract(x, y))
-    fmt.Printf("%d * %d = %d\n", x, y, multiply(x, y))
-    fmt.Printf("%d / %d = %d\n", x, y, divide(x, y))
-    fmt.Printf("%d %% %d = %d\n", x, y, remainder(x, y))
-    
-    // Power function
-    base, exp := 2, 5
-    fmt.Printf("%d ^ %d = %d\n", base, exp, power(base, exp))
-    
-    // Edge cases
-    fmt.Println("\nEdge cases:")
-    fmt.Printf("10 / 0 = %d\n", divide(10, 0))
-    fmt.Printf("10 %% 0 = %d\n", remainder(10, 0))
-    fmt.Printf("5 ^ 0 = %d\n", power(5, 0))
+	fmt.Println("=== Simple Temperature Converter ===")
+	fmt.Println("Demonstrating Basic Go Functions")
+	fmt.Println()
+	
+	// Test temperatures
+	testCelsius := 25
+	testFahrenheit := 77
+	
+	fmt.Printf("Test temperatures: %d°C and %d°F\n\n", testCelsius, testFahrenheit)
+	
+	// Celsius to Fahrenheit conversion
+	fahrenheitResult := celsiusToFahrenheit(testCelsius)
+	fmt.Printf("Celsius to Fahrenheit: %d°C = %d°F\n", testCelsius, fahrenheitResult)
+	
+	// Fahrenheit to Celsius conversion
+	celsiusResult := fahrenheitToCelsius(testFahrenheit)
+	fmt.Printf("Fahrenheit to Celsius: %d°F = %d°C\n", testFahrenheit, celsiusResult)
+	
+	// Double temperature demonstrations
+	doubleCelsius := doubleTemperature(testCelsius)
+	doubleFahrenheit := doubleTemperature(testFahrenheit)
+	fmt.Printf("Double temperature: %d°C doubled = %d°C\n", testCelsius, doubleCelsius)
+	fmt.Printf("Double temperature: %d°F doubled = %d°F\n", testFahrenheit, doubleFahrenheit)
+	
+	// More function call examples
+	fmt.Println("\nAdditional Tests:")
+	result1 := celsiusToFahrenheit(0)
+	fmt.Printf("Water freezing point: 0°C = %d°F\n", result1)
+	
+	result2 := fahrenheitToCelsius(32)
+	fmt.Printf("Water freezing point: 32°F = %d°C\n", result2)
+	
+	result3 := doubleTemperature(10)
+	fmt.Printf("Double 10 degrees = %d degrees\n", result3)
+	
+	fmt.Println("\n✅ Temperature converter completed successfully!")
 }
 ```
 
 **Key Implementation Notes**:
-- Functions follow single responsibility principle - each does one operation
-- Error handling prevents runtime panics from division by zero
-- The power function demonstrates function reuse by calling multiply
-- All functions maintain single parameter and single return value pattern
-- Edge cases are handled gracefully with appropriate warnings
+- **Function Definitions**: Each function uses the `func name(param type) returnType` syntax from the exercise
+- **Parameter Handling**: Functions accept int parameters exactly as shown in the calculator exercise  
+- **Return Values**: All functions return int values using the `return` statement
+- **Function Calls**: Main function calls each function and stores results in variables
+- **Arithmetic Operations**: Uses basic operations (+, -, *, /) within functions as covered
+- **No New Concepts**: Only uses concepts from current exercise (functions) and prior exercises (variables, basic program structure, fmt functions)
+- **Simple Focus**: Concentrates on basic function usage without advanced concepts like arrays or loops
 
 </details>
 

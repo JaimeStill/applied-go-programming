@@ -130,11 +130,11 @@ Fill the template with:
 - Performance implications and optimization opportunities
 - Security and reliability concerns where applicable
 
-**Enhancement Exercises:**
-- 3 additional exercises of increasing difficulty
-- Optional integrations with other concepts
-- Performance optimization opportunities
-- Creative applications of the core concept
+**Independent Challenge:**
+- Self-contained challenge building complete executable solution using only concepts from current and previous exercises
+- Clear requirements for standalone implementation with explicit concept constraints
+- Focus on independent problem-solving and creative application within learned concepts
+- Comprehensive solution demonstrating mastery without introducing new concepts
 
 **Testing and Validation:**
 - Comprehensive test cases covering normal and edge cases
@@ -224,7 +224,7 @@ The generated exercise should:
 - Support different learning styles (visual, kinesthetic, reading)
 - Provide multiple explanation approaches
 - Include debugging and troubleshooting support
-- Offer extension opportunities for advanced learners
+- Offer independent challenge opportunities for advanced learners
 
 ## File Naming Convention
 

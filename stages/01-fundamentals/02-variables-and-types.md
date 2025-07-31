@@ -296,37 +296,26 @@ _ = unusedVar  // Explicitly ignore
 // Or simply don't declare unused variables
 ```
 
-## Implementation Extension
+## Independent Challenge
 
-**Enhancement Exercise**: Create a type-safe configuration system
+Build a personal profile generator that creates detailed user profiles using Go's variable and type system. Your program should collect user information, perform type conversions, and generate a formatted profile report.
 
-**Additional Requirements**:
-- Define custom types for different configuration values (e.g., `type Port int`, `type DatabaseURL string`)
-- Implement validation functions for each custom type
-- Create a configuration struct with typed fields
-- Demonstrate type safety by preventing invalid assignments
-- Show how custom types can have methods attached
+**Requirements**:
+- Use all three variable declaration methods (var with type, var with inference, short declaration)
+- Demonstrate zero values by showing uninitialized variables
+- Include at least 3 constants for configuration (max age, default city, greeting message)
+- Perform numeric type conversions (int ↔ float64)
+- Implement string-to-number conversions using strconv
+- Show variable scope with helper functions
+- Display type information and memory sizes for key variables
+- Generate a complete profile report as program output
 
-## Verification
-
-Program demonstrates:
-- Three variable declaration methods (var with type, var with inference, short declaration)
-- All basic Go types (string, int, float64, bool)
-- Zero values for each type
-- Constants (typed and untyped)
-- Type sizes in bytes using unsafe.Sizeof
-- Type conversions between numeric types
-- String conversions using strconv package
-- Variable scope within functions
-- Type information output using %T verb
-- Clean, formatted output showing values and their types
-
-## Reference Implementation
+### Independent Challenge Solution
 
 *Try building the solution yourself before looking at this reference.*
 
 <details>
-<summary>Complete Reference Implementation</summary>
+<summary>Personal Profile Generator Solution</summary>
 
 ```go
 package main
@@ -337,110 +326,132 @@ import (
 	"unsafe"
 )
 
-func demonstrateScope() {
-	localVar := "I'm local to this function"
-	fmt.Printf("Inside function - localVar: %v\n", localVar)
+// Constants for configuration
+const maxAge int = 120
+const defaultCity = "Unknown"
+const welcomeMessage = "Welcome to Profile Generator"
+
+func calculateAgeCategory(age int) string {
+	if age < 18 {
+		return "Minor"
+	} else if age < 65 {
+		return "Adult"
+	}
+	return "Senior"
+}
+
+func displayScopeDemo() {
+	localMessage := "This is a local scope variable"
+	fmt.Printf("Inside function: %s\n", localMessage)
 }
 
 func main() {
-	fmt.Println("=== Go Variables and Types Demo ===")
+	fmt.Println(welcomeMessage)
+	fmt.Println("=== Personal Profile Generator ===")
 	
-	// Method 1: var declaration with type
-	var name string = "Alice"
-	var age int = 30
-	var temperature float64 = 98.6
-	var isActive bool = true
-	
-	fmt.Println("\n1. Explicit Type Declaration:")
-	fmt.Printf("name: %v (type: %T)\n", name, name)
-	fmt.Printf("age: %v (type: %T)\n", age, age)
-	fmt.Printf("temperature: %v (type: %T)\n", temperature, temperature)
-	fmt.Printf("isActive: %v (type: %T)\n", isActive, isActive)
+	// Method 1: var declaration with explicit type
+	var firstName string = "Alice"
+	var lastName string = "Johnson"
+	var age int = 28
+	var height float64 = 5.6
+	var isEmployed bool = true
 	
 	// Method 2: var with type inference
-	var city = "New York"
-	var score = 95.5
-	var count = 100
-	
-	fmt.Println("\n2. Type Inference:")
-	fmt.Printf("city: %v (type: %T)\n", city, city)
-	fmt.Printf("score: %v (type: %T)\n", score, score)
-	fmt.Printf("count: %v (type: %T)\n", count, count)
+	var city = defaultCity
+	var salary = 65000.50
+	var yearsExperience = 5
 	
 	// Method 3: short declaration
 	country := "USA"
-	rating := 4.5
-	total := 250
+	department := "Engineering"
+	rating := 4.8
 	
-	fmt.Println("\n3. Short Declaration:")
-	fmt.Printf("country: %v (type: %T)\n", country, country)
-	fmt.Printf("rating: %v (type: %T)\n", rating, rating)
-	fmt.Printf("total: %v (type: %T)\n", total, total)
+	// Zero values demonstration
+	var emptyAddress string
+	var dependents int
+	var bonusEligible bool
+	var unusedFloat float64
 	
-	// Zero values
-	var emptyString string
-	var zeroInt int
-	var zeroFloat float64
-	var falseBool bool
+	fmt.Println("\n1. Basic Profile Information:")
+	fmt.Printf("Name: %s %s (types: %T, %T)\n", firstName, lastName, firstName, lastName)
+	fmt.Printf("Age: %d years (type: %T)\n", age, age)
+	fmt.Printf("Height: %.1f feet (type: %T)\n", height, height)
+	fmt.Printf("Employed: %v (type: %T)\n", isEmployed, isEmployed)
 	
-	fmt.Println("\n4. Zero Values:")
-	fmt.Printf("emptyString: '%v' (type: %T)\n", emptyString, emptyString)
-	fmt.Printf("zeroInt: %v (type: %T)\n", zeroInt, zeroInt)
-	fmt.Printf("zeroFloat: %v (type: %T)\n", zeroFloat, zeroFloat)
-	fmt.Printf("falseBool: %v (type: %T)\n", falseBool, falseBool)
+	fmt.Println("\n2. Location & Work Details:")
+	fmt.Printf("City: %s (type: %T)\n", city, city)
+	fmt.Printf("Country: %s (type: %T)\n", country, country)
+	fmt.Printf("Department: %s (type: %T)\n", department, department)
+	fmt.Printf("Salary: $%.2f (type: %T)\n", salary, salary)
+	fmt.Printf("Experience: %d years (type: %T)\n", yearsExperience, yearsExperience)
+	fmt.Printf("Rating: %.1f/5.0 (type: %T)\n", rating, rating)
 	
-	// Constants
-	const pi float64 = 3.14159
-	const maxRetries = 3
-	const greeting = "Welcome"
+	fmt.Println("\n3. Zero Values (uninitialized variables):")
+	fmt.Printf("Address: '%s' (type: %T, zero value for string)\n", emptyAddress, emptyAddress)
+	fmt.Printf("Dependents: %d (type: %T, zero value for int)\n", dependents, dependents)
+	fmt.Printf("Bonus Eligible: %v (type: %T, zero value for bool)\n", bonusEligible, bonusEligible)
+	fmt.Printf("Unused Float: %v (type: %T, zero value for float64)\n", unusedFloat, unusedFloat)
 	
-	fmt.Println("\n5. Constants:")
-	fmt.Printf("pi: %v (type: %T)\n", pi, pi)
-	fmt.Printf("maxRetries: %v (type: %T)\n", maxRetries, maxRetries)
-	fmt.Printf("greeting: %v (type: %T)\n", greeting, greeting)
-	
-	// Type sizes
-	fmt.Println("\n6. Type Sizes:")
-	fmt.Printf("size of int: %d bytes\n", unsafe.Sizeof(age))
-	fmt.Printf("size of float64: %d bytes\n", unsafe.Sizeof(temperature))
-	fmt.Printf("size of bool: %d bytes\n", unsafe.Sizeof(isActive))
-	fmt.Printf("size of string: %d bytes\n", unsafe.Sizeof(name))
+	fmt.Println("\n4. Constants Configuration:")
+	fmt.Printf("Max allowed age: %d (type: %T)\n", maxAge, maxAge)
+	fmt.Printf("Default city: %s (type: %T)\n", defaultCity, defaultCity)
+	fmt.Printf("Welcome message: %s (type: %T)\n", welcomeMessage, welcomeMessage)
 	
 	// Type conversions
-	var intValue int = 42
-	var floatValue float64 = float64(intValue)
-	var backToInt int = int(floatValue)
+	ageAsFloat := float64(age)
+	salaryAsInt := int(salary)
+	heightInInches := height * 12.0
 	
-	fmt.Println("\n7. Numeric Type Conversions:")
-	fmt.Printf("intValue: %v (type: %T)\n", intValue, intValue)
-	fmt.Printf("floatValue: %v (type: %T)\n", floatValue, floatValue)
-	fmt.Printf("backToInt: %v (type: %T)\n", backToInt, backToInt)
+	fmt.Println("\n5. Type Conversions:")
+	fmt.Printf("Age as float64: %.1f (converted from %T to %T)\n", ageAsFloat, age, ageAsFloat)
+	fmt.Printf("Salary as int: %d (converted from %T to %T)\n", salaryAsInt, salary, salaryAsInt)
+	fmt.Printf("Height in inches: %.1f (calculated from feet)\n", heightInInches)
 	
 	// String conversions
-	stringAge := strconv.Itoa(age)
-	parsedAge, _ := strconv.Atoi(stringAge)
+	ageString := strconv.Itoa(age)
+	experienceString := strconv.Itoa(yearsExperience)
+	salaryString := strconv.FormatFloat(salary, 'f', 2, 64)
 	
-	fmt.Println("\n8. String Conversions:")
-	fmt.Printf("age as string: '%v' (type: %T)\n", stringAge, stringAge)
-	fmt.Printf("parsed back to int: %v (type: %T)\n", parsedAge, parsedAge)
+	// Parse back from strings
+	parsedAge, _ := strconv.Atoi(ageString)
+	parsedExperience, _ := strconv.Atoi(experienceString)
+	parsedSalary, _ := strconv.ParseFloat(salaryString, 64)
 	
-	// Variable scope demonstration
-	fmt.Println("\n9. Variable Scope:")
-	demonstrateScope()
-	// localVar is not accessible here - it's scoped to the function
-	fmt.Println("Main function continues after demonstrateScope()")
+	fmt.Println("\n6. String Conversions:")
+	fmt.Printf("Age as string: '%s' (type: %T)\n", ageString, ageString)
+	fmt.Printf("Experience as string: '%s' (type: %T)\n", experienceString, experienceString)
+	fmt.Printf("Salary as string: '%s' (type: %T)\n", salaryString, salaryString)
+	fmt.Printf("Parsed age: %d, experience: %d, salary: %.2f\n", parsedAge, parsedExperience, parsedSalary)
+	
+	fmt.Println("\n7. Memory Sizes:")
+	fmt.Printf("int size: %d bytes\n", unsafe.Sizeof(age))
+	fmt.Printf("float64 size: %d bytes\n", unsafe.Sizeof(salary))
+	fmt.Printf("string size: %d bytes\n", unsafe.Sizeof(firstName))
+	fmt.Printf("bool size: %d bytes\n", unsafe.Sizeof(isEmployed))
+	
+	fmt.Println("\n8. Variable Scope Demonstration:")
+	displayScopeDemo()
+	// localMessage is not accessible here - scoped to the function
+	
+	fmt.Println("\n9. Generated Profile Summary:")
+	ageCategory := calculateAgeCategory(age)
+	fmt.Printf("Profile: %s %s, %d years old (%s)\n", firstName, lastName, age, ageCategory)
+	fmt.Printf("Location: %s, %s\n", city, country)
+	fmt.Printf("Career: %s department, %d years experience\n", department, yearsExperience)
+	fmt.Printf("Status: Employment=%v, Rating=%.1f/5.0\n", isEmployed, rating)
+	fmt.Printf("Financial: $%.2f salary\n", salary)
 }
 ```
 
 **Key Implementation Notes**:
-- All three variable declaration methods demonstrate different use cases and scoping rules
-- Zero values provide predictable initialization behavior for all Go types
-- Constants are evaluated at compile-time and can be typed or untyped
-- The `unsafe` package provides low-level memory introspection capabilities
-- Type conversions must be explicit in Go, preventing accidental data loss
-- The `strconv` package handles string-to-numeric conversions safely
-- Variable scope is function-based, with package-level variables accessible globally
-- The `%T` verb shows runtime type information for any value
+- **Three Declaration Methods**: Demonstrates var with type (lines 29-33), var with inference (lines 35-38), and short declaration (lines 40-43) in realistic contexts
+- **Zero Values**: Shows Go's predictable initialization with empty string, zero int, false bool, and zero float64
+- **Constants**: Uses typed (maxAge int) and untyped (defaultCity, welcomeMessage) constants for configuration
+- **Type Conversions**: Explicit numeric conversions prevent data loss, string conversions use strconv package safely
+- **Scope Demonstration**: Helper functions show function-local variable isolation
+- **Memory Introspection**: unsafe.Sizeof reveals actual memory footprint of Go types
+- **Practical Application**: Creates a complete profile generator demonstrating real-world variable usage patterns
+- **Type Safety**: %T verb and explicit type information throughout show Go's type system working
 
 </details>
 
