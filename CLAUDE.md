@@ -122,6 +122,6 @@ Use for AECS structure enforcement:
 - Example: `/stages/02-concurrency/enhancements/goroutine-error-handling.md`
 
 **Stage Integration Exercises**: `/stages/XX-[stage]/XX-[concept].md`
-- Add new concept Exercises to existing Stages (updates stage.md automatically)
+- Add new concept Exercises to existing Stages (updates stage README.md automatically)
 - Full integration with Stage progression
 - Example: `/stages/04-web-programming/03-json-marshaling.md`

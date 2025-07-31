@@ -41,8 +41,8 @@ Initialize a new Stage independently without requiring existing AECS infrastruct
 ### Step 1: Context Analysis and Integration Planning
 Analyze existing infrastructure (if any) and plan integration:
 
-1. **Check for Existing PATH.md**: If present, analyze for integration context
-2. **Scan Existing Stages**: Identify prerequisite concepts and progression logic
+1. **Check for Existing README.md**: If present, analyze integrated path content for context
+2. **Scan Existing Stages**: Identify prerequisite concepts and progression logic from stage README.md files
 3. **Determine Placement**: Use INSERTION_POINT or inverse-prompting to establish Stage position
 4. **Validate Concept Coverage**: Use inverse-prompting to ensure TARGET_CONCEPTS are comprehensive
 
@@ -53,7 +53,7 @@ Use intelligent questioning to gather required details:
 ```
 "I need to understand where this Stage fits in the learning progression:
 
-**Existing Context**: [Analysis of current PATH.md if present]
+**Existing Context**: [Analysis of current README.md path content if present]
 **Suggested Placement**: Based on your TARGET_CONCEPTS, this Stage appears to build on [prerequisite concepts] and prepare for [subsequent concepts].
 
 Where should this Stage be positioned? Or should I proceed with my suggested placement?"
@@ -82,7 +82,7 @@ Transform abstract TARGET_CONCEPTS into atomic, implementable concepts:
 Using the stage template at `_framework/templates/stage.md`, create:
 
 **Stage Organization**:
-- **stage.md**: Complete Stage structure with Exercise progression
+- **README.md**: Complete Stage structure with Exercise progression
 - **Exercise Sequence**: Ordered list of atomic concepts with building tasks
 - **Dependency Chain**: Clear progression showing concept relationships
 - **Integration Points**: How this Stage connects to broader Path
@@ -95,14 +95,14 @@ Using the stage template at `_framework/templates/stage.md`, create:
 - **Building Task**: Complete step-by-step examples with actionable implementation
 
 ### Step 5: Path Integration (if applicable)
-If existing PATH.md is present:
+If existing README.md is present:
 
-1. **Update PATH.md**: Add new Stage to progression
-2. **Validate Sequence**: Ensure proper dependency flow
+1. **Update README.md**: Add new Stage to progression in the main path content
+2. **Validate Sequence**: Ensure proper dependency flow within integrated path
 3. **Update References**: Adjust Stage numbering if needed
 4. **Maintain Consistency**: Use existing vocabulary and patterns
 
-### Step 6: Standalone Operation (if no existing PATH.md)
+### Step 6: Standalone Operation (if no existing README.md)
 If creating Stage independently:
 
 1. **Self-Contained Structure**: Ensure Stage works without external dependencies
@@ -162,10 +162,10 @@ Please confirm or suggest modifications."
 ## Output Requirements
 
 Generate complete Stage initialization including:
-1. **stage.md**: Complete Stage organization with Exercise sequences
+1. **README.md**: Complete Stage organization with Exercise sequences
 2. **Concept Breakdown**: Atomic concepts with implementation descriptions
 3. **Exercise Planning**: Detailed building tasks for each concept
-4. **Integration Updates**: PATH.md updates if applicable
+4. **Integration Updates**: Main README.md updates if applicable
 5. **Dependency Documentation**: Clear prerequisite and progression chains
 6. **AECS Compliance**: All content enforces four core principles
 7. **Subagent Validation**: Project subagents validate the complete Stage

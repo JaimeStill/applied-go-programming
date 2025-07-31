@@ -93,11 +93,11 @@ Repository Structure:
 │   ├── CLAUDE.md           # AECS-specific Claude directives
 │   ├── templates/         # AECS-compliant content templates
 │   └── prompts/           # Exercise-first generation prompts
-├── PATH.md                 # Main Path document (Subject learning journey)
+├── README.md               # Main Path document and project documentation (Subject learning journey)
 ├── .claude/agents/         # AECS-constrained AI agent profiles
 └── stages/                 # Exercise-driven learning content
     ├── 01-stage-name/         # Stage directories containing Exercise sequences
-    │   ├── stage.md           # Stage organization and Exercise progression
+    │   ├── README.md          # Stage organization and Exercise progression
     │   └── 01-exercise.md     # Individual atomic Exercises
     └── appendices/            # Reference materials supporting Exercises
         ├── 01-appendix-name.md
@@ -130,7 +130,7 @@ The prompt system uses clear create-/generate- vocabulary distinction:
 - **create-exercise.md**: Create Exercises flexibly (standalone/enhancement/integration)
 
 **Generation Prompts (Derive from existing infrastructure)**:
-- **generate-stage.md**: Build Stage progressions from existing PATH.md analysis
+- **generate-stage.md**: Build Stage progressions from existing README.md path analysis
 - **generate-exercise.md**: Generate Exercises using context derivation from existing content
 - **generate-appendix.md**: Create reference materials with inverse-prompting for missing parameters
 

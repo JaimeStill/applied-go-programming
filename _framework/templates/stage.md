@@ -1,5 +1,7 @@
 # {{STAGE_TITLE}}: Exercise Progression
 
+<!-- This template generates Stage README.md files for GitHub-standard directory navigation -->
+
 ## Stage Metadata
 
 - **Stage Number**: {{STAGE_NUMBER}}

@@ -140,6 +140,11 @@ Replace omitted content with descriptive comments that provide context:
 
 **Required Hierarchy**: Subject → Path → Stage → Concept → Exercise (+ Appendix parallel)
 
+**File Organization**: 
+- **Main Path**: README.md contains complete learning path and documentation
+- **Stage Documentation**: stages/##-[stage-name]/README.md for GitHub-standard navigation
+- **Subject-Enhanced Templates**: _templates/exercise.md provides subject-specific exercise scaffolding
+
 ## Subagent Engagement Protocol
 
 Use standardized subagents for automated AECS validation. All learning paths use identical subagent names for consistency and reliability.
@@ -272,6 +277,7 @@ Format your response as: Issue → Correction
 
 ### Stage Document Format Requirements
 
+**File Location**: stages/##-[stage-name]/README.md for GitHub-standard navigation
 **Abstraction Level**: High-level exercise descriptions without implementation code
 **Required Sections**: Stage Metadata, Exercise Sequence, Progressive Complexity Validation
 **Prohibited Elements**: 
@@ -285,6 +291,7 @@ Format your response as: Issue → Correction
 
 ### Exercise Document Format Requirements
 
+**Template Source**: Use subject-enhanced template from _templates/exercise.md for consistent scaffolding
 **Abstraction Level**: Detailed implementation guidance with complete code examples
 **Required Sections**: Exercise metadata, building steps, code examples, verification
 **Prohibited Elements**:
@@ -292,10 +299,18 @@ Format your response as: Issue → Correction
 - Multi-concept mixing within single exercise
 - Passive consumption elements
 
+### Subject-Enhanced Exercise Template Requirements
+
+**File Location**: _templates/exercise.md provides subject-specific exercise scaffolding
+**Purpose**: Consistent exercise creation with domain-appropriate placeholders and patterns
+**Generated During**: Path initialization via create-path.md
+**Benefits**: Subject-specific incremental step patterns, common issues/solutions, naming conventions
+
 ### Path Document Format Requirements
 
+**File Location**: README.md contains integrated path content and project documentation
 **Abstraction Level**: Stage progression overview with building outcomes
-**Required Sections**: Path metadata, stage progression, prerequisites, outcomes
+**Required Sections**: Path metadata, stage progression, prerequisites, outcomes, getting started instructions
 **Prohibited Elements**:
 - Individual exercise details
 - Implementation specifics
@@ -313,24 +328,27 @@ Format your response as: Issue → Correction
 
 Before finalizing any artifact, verify:
 
-**Stage Documents**:
+**Stage Documents** (README.md in stage directories):
 - [ ] No implementation code present
 - [ ] Exercise descriptions are conceptual, not instructional
 - [ ] Focus on what will be built, not how to build it
 - [ ] Appropriate abstraction level maintained throughout
+- [ ] Located at stages/##-[stage-name]/README.md
 
-**Exercise Documents**:
+**Exercise Documents** (using _templates/exercise.md):
 - [ ] Complete step-by-step examples provided (no placeholders)
 - [ ] Working examples that produce tangible results
 - [ ] Single concept focus maintained
 - [ ] No "Requirements" lists or "Your Task" sections
 - [ ] Each step provides complete, actionable examples
+- [ ] Subject-specific template patterns followed
 
-**Path Documents**:
-- [ ] Stage-level progression only
-- [ ] No exercise-level details
+**Path Documents** (main README.md):
+- [ ] Stage-level progression included in integrated content
+- [ ] No exercise-level details in path sections
 - [ ] Learning outcomes clearly defined
 - [ ] Prerequisites properly established
+- [ ] Getting started instructions included
 
 **Appendix Documents**:
 - [ ] Practical reference material only

@@ -39,11 +39,11 @@ Create a detailed Stage with Exercise progression for any learning subject, foll
 
 ## Execution Instructions
 
-Use the stage template at `_framework/templates/stage.md` to generate a comprehensive Stage with Exercise sequences.
+Use the stage template at `_framework/templates/stage.md` to generate a comprehensive Stage README.md with Exercise sequences.
 
-### Step 1: PATH.md Analysis and Context Extraction
+### Step 1: README.md Analysis and Context Extraction
 Before generating content, analyze existing infrastructure:
-1. **Read PATH.md**: Extract stage context, numbering, and overall progression
+1. **Read README.md**: Extract stage context, numbering, and overall progression from integrated path content
 2. **Analyze Stage Position**: Determine prerequisites from previous stages and preparation for next stages
 3. **Extract Dependencies**: Identify concepts mastered through previous Stage Exercises
 4. **Validate TARGET_CONCEPTS**: Use inverse-prompting to ensure comprehensive concept coverage
@@ -154,8 +154,8 @@ The generated Stage MUST demonstrate:
 ## File Naming Convention
 
 Generated Stage documents should be saved as:
-- **File Path**: `stages/##-[stage-name]/stage.md`
-- **Example**: `stages/01-fundamentals/stage.md`
+- **File Path**: `stages/##-[stage-name]/README.md`
+- **Example**: `stages/01-fundamentals/README.md`
 
 ## Example Usage
 

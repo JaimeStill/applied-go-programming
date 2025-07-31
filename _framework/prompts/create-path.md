@@ -19,25 +19,31 @@ Bootstrap a complete AECS project from scratch for any technical Subject. This i
 - **.claude/agents/**: Auto-generate domain-specific AECS-constrained subagents
 - **Project files**: Create CLAUDE.md, README.md with project-specific guidance
 
-### Auto-Generate Standardized Subagents
-Automatically create the three standardized AECS-constrained subagents using `_framework/prompts/generate-subagents.md`:
+### Auto-Generate Standardized Subagents and Subject Templates
+Automatically create the three standardized AECS-constrained subagents and subject-enhanced exercise templates:
 
 **Required Standardized Subagents**:
 - **technical-expert**: Subject-specific technical implementation validation
 - **learning-designer**: AECS pedagogy and learning progression validation
 - **content-editor**: AECS vocabulary and structure compliance validation
 
+**Required Subject-Enhanced Exercise Template**:
+- **exercise.md**: Subject-specific exercise template with domain-appropriate placeholders and patterns
+
 **Auto-Generation Process**:
 1. Execute: `_framework/prompts/generate-subagents.md. SUBJECT is "[SUBJECT]".`
 2. Templates from `_framework/templates/agents/` are processed with [SUBJECT] parameter
 3. Three standardized subagents created in `.claude/agents/` directory
-4. Enables reliable automated subagent engagement
+4. Generate subject-enhanced exercise template from `_framework/templates/exercise.md`
+5. Create `_templates/exercise.md` with subject-specific placeholders and patterns
+6. Enables reliable automated subagent engagement and consistent exercise creation
 
 **Benefits of Standardized Approach**:
-- **Framework Consistency**: All learning paths use identical subagent references  
+- **Framework Consistency**: All learning paths use identical subagent references and exercise scaffolding
 - **Subject Flexibility**: Templates adapt to any domain through parameterization
 - **Automated Validation**: Subagents can be engaged via Task tool for streamlined workflow
-- **Session Independence**: Subagents must exist at session start to be recognized
+- **Exercise Consistency**: Subject-enhanced templates provide consistent exercise creation patterns
+- **Session Independence**: Subagents and templates must exist at session start to be recognized
 
 ## AECS Compliance Requirements
 
@@ -69,31 +75,34 @@ Automatically create the three standardized AECS-constrained subagents using `_f
 
 ## Execution Instructions
 
-### Step 1: Domain Analysis and Subagent Generation
-Before creating content, analyze the SUBJECT and auto-generate appropriate subagents:
+### Step 1: Domain Analysis and Template Generation
+Before creating content, analyze the SUBJECT and auto-generate appropriate subagents and subject-enhanced templates:
 
 1. **Identify Technical Domain**: Determine specific expertise needed (programming language, technology stack, operations domain)
 2. **Generate Domain Expert**: Create technical specialist using `create-subagent.md`
 3. **Generate Pedagogical Expert**: Create cs-professor with domain context
 4. **Generate Content Editor**: Create academic-editor with subject awareness
-5. **Save Agent Profiles**: Write all generated agents to `.claude/agents/` directory
+5. **Generate Subject-Enhanced Exercise Template**: Create domain-specific exercise template from `_framework/templates/exercise.md`
+6. **Save Agent Profiles**: Write all generated agents to `.claude/agents/` directory
+7. **Save Subject Template**: Write subject-enhanced exercise template to `_templates/exercise.md`
 
 ### Step 2: Project Structure Initialization
 Create complete project directory structure:
 
 ```
 [project-name]/
-├── PATH.md                      # Main learning path (generated)
+├── README.md                    # Main learning path and documentation (generated)
 ├── CLAUDE.md                    # Project-specific directives (generated)
-├── README.md                    # Public documentation (generated)
 ├── _framework/                  # AECS framework (existing)
+├── _templates/                  # Subject-specific templates (generated)
+│   └── exercise.md              # Subject-enhanced exercise template
 ├── .claude/agents/              # Auto-generated subagents
 │   ├── [domain]-engineer.md    # Technical specialist
 │   ├── cs-professor.md          # Pedagogical expert
 │   └── academic-editor.md       # Content editor
 ├── stages/                      # Exercise-driven learning content
 │   └── 01-fundamentals/         # Initial stage (generated)
-│       └── stage.md
+│       └── README.md            # Stage documentation
 └── standalone/                  # Independent exercises (created empty)
 ```
 
@@ -119,7 +128,7 @@ For each Stage, provide:
 
 ### Step 4: Initialize Foundation Stage
 Create Stage 1: Fundamentals with:
-- **stage.md**: Stage organization and Exercise progression
+- **README.md**: Stage organization and Exercise progression
 - **Fundamental Concepts**: Most basic concepts for the SUBJECT
 - **Atomic Exercises**: Single-concept implementations
 - **Working Examples**: Immediate practical building tasks
@@ -131,13 +140,15 @@ Create project-specific files:
 - AECS framework compliance directive
 - Subject-specific implementation requirements (including Incremental Step Focus guidance for the domain)
 - Generated subagent usage instructions
+- Subject-enhanced exercise template usage instructions
 - Content development processes
 
-**README.md**: Public-facing documentation with:
-- Exercise-driven learning approach explanation
-- Getting started instructions
-- Repository structure overview
-- Learning outcomes and requirements
+**README.md**: Comprehensive project documentation with:
+- Exercise-driven learning path (complete PATH content)
+- Getting started instructions with framework usage
+- Stage progression and prerequisites
+- Learning outcomes and practical mastery objectives
+- AECS framework explanation
 
 ## Auto-Subagent Generation Templates
 
@@ -189,13 +200,14 @@ FOCUS_AREAS is "AECS structure maintenance for [SUBJECT], Exercise Primacy enfor
 ## Output Requirements
 
 Generate complete project initialization including:
-1. **PATH.md**: Complete learning path with AECS-compliant structure
-2. **Project Structure**: All directories and initial files
+1. **README.md**: Complete learning path with AECS-compliant structure and integrated documentation
+2. **Project Structure**: All directories and initial files including `_templates/` directory
 3. **Auto-Generated Subagents**: Domain-specific AECS-constrained agents
-4. **Foundation Stage**: Stage 1 with fundamental concepts and exercises
-5. **Project Documentation**: CLAUDE.md and README.md
-6. **AECS Compliance**: All content enforces four core principles
-7. **Subagent Validation**: Newly created subagents validate the complete Path
+4. **Subject-Enhanced Exercise Template**: Domain-specific exercise template with subject placeholders
+5. **Foundation Stage**: Stage 1 with fundamental concepts and exercises (as README.md)
+6. **Project Documentation**: CLAUDE.md with template usage instructions
+7. **AECS Compliance**: All content enforces four core principles
+8. **Subagent Validation**: Newly created subagents validate the complete Path
 
 ## Success Criteria
 
